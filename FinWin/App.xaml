@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:abstractions="clr-namespace:RoundedBoxView.Forms.Plugin.Abstractions;assembly=RoundedBoxView.Forms.Plugin.Abstractions"
+             xmlns:converters="clr-namespace:FinWin.Converters;assembly=FinWin"
+             x:Class="FinWin.App">
+     <Application.Resources>
+
+        <!--  Application resource dictionary  -->
+        <ResourceDictionary>
+            <Color x:Key="BackgroundColor">#2B3746</Color>
+            <Color x:Key="TintColor">#FFFFFF</Color>
+            <Color x:Key="GrayColor">#F6F7F8</Color>
+            <Color x:Key="TextLightGrayColor">#999999</Color>
+            <Color x:Key="TextColor">White</Color>
+            <Color x:Key="TextGrayColor">#666666</Color>
+            <Color x:Key="HintTextGrayColor">#B7B7B7</Color>
+            <Color x:Key="LineGrayColor">#CCCCCC</Color>
+            <Color x:Key="ClosedContractGrayColor">#F5F5F5</Color>
+            <x:Double x:Key="CellHeight">50</x:Double>
+            
+            <Style TargetType="Label">
+                <Setter Property="FontFamily"
+                        Value="MyriadPro" />
+            </Style>
+            
+            <converters:NullVisConverter x:Key="NullVisConverter" />
+            <converters:StartItemEnableColorConverter x:Key="StartItemEnableColorConverter" />
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
