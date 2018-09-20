@@ -2,7 +2,10 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
+using Newtonsoft.Json;
+
 using Finwin.Backend.Functions;
+using Finwin.Backend.Contracts;
 
 namespace Finwin.Backend.Services
 {
@@ -15,17 +18,19 @@ namespace Finwin.Backend.Services
         /// Query this instance.
         /// </summary>
         /// <returns>The query.</returns>
-        public async Task<object> Query(string query)
+        public async Task<BingNewsContract> Query(string query)
         {
             using (var client = new HttpClient())
             {
                 var url = string.Format(ConfigManager.Instance.BingNewsUrl, query);
 
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
-                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "674a91c42e56416d87279366e4648e1f");
+                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", ConfigManager.Instance.BingNewsApiKey);
 
                 var response = await client.GetAsync(url);
-                return await response.Content.ReadAsStringAsync();
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<BingNewsContract>(json);
             }
         }
 
@@ -40,7 +45,6 @@ namespace Finwin.Backend.Services
         /// the <see cref="T:Finwin.Backend.Services.NewsApiService"/> was occupying.</remarks>
         public void Dispose()
         {
-
         }
     }
 }

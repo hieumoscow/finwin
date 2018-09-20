@@ -13,7 +13,9 @@ using Microsoft.Azure.WebJobs.Host;
 using Microsoft.ApplicationInsights.DataContracts;
 
 using Newtonsoft.Json;
+
 using Finwin.Backend.Services;
+using Finwin.Backend.Contracts;
 
 namespace Finwin.Backend.Functions
 {
@@ -21,8 +23,8 @@ namespace Finwin.Backend.Functions
     {
         [FunctionName(nameof(QueryNewsApi))]
 
-        async public static Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = nameof(QueryNewsApi))]
-            HttpRequestMessage req, TraceWriter log)
+        async public static Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = nameof(QueryNewsApi))]
+            HttpRequestMessage req)
         {
             using (var analytic = new AnalyticService(new RequestTelemetry
             {
@@ -31,11 +33,12 @@ namespace Finwin.Backend.Functions
             {
                 try
                 {
-                    var query = "";//req.GetQueryNameValuePairs().FirstOrDefault(kvp => kvp.Key == "query").Value;
+                    var json = await req.Content.ReadAsStringAsync();
+                    var query = JsonConvert.DeserializeObject<QueryContract>(json);
 
                     using (var newsApi = new NewsApiService())
                     {
-                        var news = await newsApi.Query(query);
+                        var news = await newsApi.Query(query.Query);
 
                         return req.CreateResponse(HttpStatusCode.OK, news);
                     }

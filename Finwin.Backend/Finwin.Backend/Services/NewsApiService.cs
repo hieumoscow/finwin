@@ -2,7 +2,10 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
+using Newtonsoft.Json;
+
 using Finwin.Backend.Functions;
+using Finwin.Backend.Contracts;
 
 namespace Finwin.Backend.Services
 {
@@ -15,14 +18,16 @@ namespace Finwin.Backend.Services
         /// Query this instance.
         /// </summary>
         /// <returns>The query.</returns>
-        public async Task<object> Query(string query)
+        public async Task<NewsApiContract> Query(string query)
         {
             using (var client = new HttpClient())
             {
-                var url = string.Format(ConfigManager.Instance.NewsApiUrl, query);
+                var url = string.Format(ConfigManager.Instance.NewsApiUrl, query, ConfigManager.Instance.NewsApiKey);
 
                 var response = await client.GetAsync(url);
-                return await response.Content.ReadAsStringAsync();
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<NewsApiContract>(json);
             }
         }
 
@@ -37,7 +42,6 @@ namespace Finwin.Backend.Services
         /// the <see cref="T:Finwin.Backend.Services.NewsApiService"/> was occupying.</remarks>
         public void Dispose()
         {
-
         }
     }
 }

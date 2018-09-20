@@ -16,10 +16,10 @@ namespace Finwin.Backend.Functions
 
         public static ConfigManager Load()
 		{
-			var config = new ConfigManager
-			{
-                NewsApiKey = Environment.GetEnvironmentVariable("NEWSAPI_KEY"),
-                BingNewsApiKey = Environment.GetEnvironmentVariable("BINGNEWS_KEY"),
+            var config = new ConfigManager
+            {
+                NewsApiKey = "5ca1db9abf5644ae99088b8551cfa221",//Environment.GetEnvironmentVariable("NEWSAPI_KEY"),
+                BingNewsApiKey = "674a91c42e56416d87279366e4648e1f",//Environment.GetEnvironmentVariable("BINGNEWS_KEY"),
             };
 
 			return config;
