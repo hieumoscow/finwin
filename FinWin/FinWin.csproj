@@ -15,6 +15,7 @@
     <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
     <PackageReference Include="Xam.Plugins.Forms.RoundedBoxView" Version="1.0.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.0.3" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />

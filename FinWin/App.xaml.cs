@@ -18,6 +18,8 @@ namespace FinWin
         public App()
         {
             InitializeComponent();
+
+
             ViewModelBase.RegisterViewModels();
 
             MainPage = new MainPage();
