@@ -6,10 +6,13 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Web;
 using System.Threading.Tasks;
+using System.IO;
 
-using Microsoft.Azure.WebJobs;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs.Extensions.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs.Host;
+using Microsoft.Azure.WebJobs;
 using Microsoft.ApplicationInsights.DataContracts;
 
 using Newtonsoft.Json;
@@ -22,9 +25,8 @@ namespace Finwin.Backend.Functions
     public static class QueryBingNews
     {
         [FunctionName(nameof(QueryBingNews))]
-
-        async public static Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = nameof(QueryBingNews))]
-            HttpRequestMessage req)
+        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = nameof(QueryBingNews))]
+                                        HttpRequest req)
         {
             using (var analytic = new AnalyticService(new RequestTelemetry
             {
@@ -33,21 +35,22 @@ namespace Finwin.Backend.Functions
             {
                 try
                 {
-                    var json = await req.Content.ReadAsStringAsync();
-                    var query = JsonConvert.DeserializeObject<QueryContract>(json);
+                    string query = req.Query["query"];
+
+                    string requestBody = new StreamReader(req.Body).ReadToEnd();
+                    dynamic data = JsonConvert.DeserializeObject(requestBody);
+                    query = query ?? data?.Query;
 
                     using (var newsApi = new BingNewsService())
                     {
-                        var news = await newsApi.Query(query.Query);
-
-                        return req.CreateResponse(HttpStatusCode.OK, news);
+                        var news = await newsApi.Query(query);
+                        return (ActionResult)new OkObjectResult(news);
                     }
                 }
                 catch (Exception e)
                 {
                     analytic.TrackException(e);
-
-                    return req.CreateErrorResponse(HttpStatusCode.BadRequest, e);
+                    return new BadRequestObjectResult(e);
                 }
             }
         }
