@@ -13,7 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Bot_Builder_Basic_Bot_V4
+namespace Finwin.Bot
 {
     /// <summary>
     /// The Startup class configures services and the app's request pipeline.
@@ -104,13 +104,13 @@ namespace Bot_Builder_Basic_Bot_V4
             var userState = new UserState(dataStore);
             services.AddSingleton(userState);
 
-            services.AddBot<BasicBot>(options =>
+            services.AddBot<FinwinBot>(options =>
             {
                 options.CredentialProvider = new SimpleCredentialProvider(endpointService.AppId, endpointService.AppPassword);
 
                 // Catches any errors that occur during a conversation turn and logs them to currently
                 // configured ILogger.
-                ILogger logger = _loggerFactory.CreateLogger<BasicBot>();
+                ILogger logger = _loggerFactory.CreateLogger<FinwinBot>();
                 options.OnTurnError = async (context, exception) =>
                 {
                     logger.LogError($"Exception caught : {exception}");

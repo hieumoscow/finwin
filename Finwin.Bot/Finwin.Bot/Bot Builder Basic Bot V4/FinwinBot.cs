@@ -7,30 +7,29 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Finwin.Bot.Dialogs;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace Bot_Builder_Basic_Bot_V4
+namespace Finwin.Bot
 {
     /// <summary>
     /// Main entry point and orchestration for bot.
     /// </summary>
-    public class BasicBot : IBot
+    public class FinwinBot : IBot
     {
         // Supported LUIS Intents
-        public const string GreetingIntent = "Greeting";
-        public const string CancelIntent = "Cancel";
-        public const string HelpIntent = "Help";
+        public const string NewsIntent = "News";
         public const string NoneIntent = "None";
 
         /// <summary>
         /// Key in the bot config (.bot file) for the LUIS instance.
         /// In the .bot file, multiple instances of LUIS can be configured.
         /// </summary>
-        public static readonly string LuisConfiguration = "basic-bot-LUIS";
+        public static readonly string LuisConfiguration = "finwin-LUIS";
 
         private readonly IStatePropertyAccessor<GreetingState> _greetingStateAccessor;
         private readonly IStatePropertyAccessor<DialogState> _dialogStateAccessor;
@@ -43,7 +42,7 @@ namespace Bot_Builder_Basic_Bot_V4
         /// </summary>
         /// <param name="botServices">Bot services.</param>
         /// <param name="accessors">Bot State Accessors.</param>
-        public BasicBot(BotServices services, UserState userState, ConversationState conversationState, ILoggerFactory loggerFactory)
+        public FinwinBot(BotServices services, UserState userState, ConversationState conversationState, ILoggerFactory loggerFactory)
         {
             _services = services ?? throw new ArgumentNullException(nameof(services));
             _userState = userState ?? throw new ArgumentNullException(nameof(userState));
@@ -59,7 +58,7 @@ namespace Bot_Builder_Basic_Bot_V4
             }
 
             Dialogs = new DialogSet(_dialogStateAccessor);
-            Dialogs.Add(new GreetingDialog(_greetingStateAccessor, loggerFactory));
+            Dialogs.Add(new NewsDialog(_greetingStateAccessor, loggerFactory));
         }
 
         private DialogSet Dialogs { get; set; }
@@ -114,8 +113,8 @@ namespace Bot_Builder_Basic_Bot_V4
                         case DialogTurnStatus.Empty:
                             switch (topIntent)
                             {
-                                case GreetingIntent:
-                                    await dc.BeginDialogAsync(nameof(GreetingDialog));
+                                case NewsIntent:
+                                    await dc.BeginDialogAsync(nameof(NewsDialog));
                                     break;
 
                                 case NoneIntent:
@@ -169,7 +168,7 @@ namespace Bot_Builder_Basic_Bot_V4
         private async Task<bool> IsTurnInterruptedAsync(DialogContext dc, string topIntent)
         {
             // See if there are any conversation interrupts we need to handle.
-            if (topIntent.Equals(CancelIntent))
+            /*if (topIntent.Equals(CancelIntent))
             {
                 if (dc.ActiveDialog != null)
                 {
@@ -194,7 +193,7 @@ namespace Bot_Builder_Basic_Bot_V4
                 }
 
                 return true;        // Handled the interrupt.
-            }
+            }*/
 
             return false;           // Did not handle the interrupt.
         }

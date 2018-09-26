@@ -9,7 +9,7 @@ using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
 
-namespace Bot_Builder_Basic_Bot_V4
+namespace Finwin.Bot.Dialogs
 {
     /// <summary>
     /// Demonstrates the following concepts:
@@ -37,13 +37,13 @@ namespace Bot_Builder_Basic_Bot_V4
         private const string ProfileDialog = "profileDialog";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GreetingDialog"/> class.
+        /// Initializes a new instance of the <see cref="NewsDialog"/> class.
         /// </summary>
         /// <param name="botServices">Connected services used in processing.</param>
         /// <param name="botState">The <see cref="UserState"/> for storing properties at user-scope.</param>
         /// <param name="loggerFactory">The <see cref="ILoggerFactory"/> that enables logging and tracing.</param>
         public GreetingDialog(IStatePropertyAccessor<GreetingState> userProfileStateAccessor, ILoggerFactory loggerFactory)
-            : base(nameof(GreetingDialog))
+            : base(nameof(NewsDialog))
         {
             UserProfileAccessor = userProfileStateAccessor ?? throw new ArgumentNullException(nameof(userProfileStateAccessor));
 
