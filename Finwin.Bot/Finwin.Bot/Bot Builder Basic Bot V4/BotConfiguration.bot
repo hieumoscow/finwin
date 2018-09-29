@@ -1,15 +1,49 @@
 ﻿{
-  "name": "Bot_Builder_Basic_Bot_V4",
+  "name": "finwinbot",
+  "padlock": "Ge71/oFEEVcy8VYhnuqgOw==!SqFGoWuIVtaPrDx3gCwDJxjt8PjpRV+xqJGPQizAqQFNcXtXWNBSRIfFC0Ca0cDN",
+  "version": "2.0",
   "services": [
     {
-      "type": "endpoint",
-      "name": "development",
-      "endpoint": "http://localhost:3978/api/messages",
+      "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+      "subscriptionId": "7a753527-b19c-44e0-954e-1cd74cbb5b62",
+      "resourceGroup": "finwin",
+      "serviceName": "finwinbot",
+      "type": "abs",
+      "name": "finwinbot",
+      "id": "1"
+    },
+    {
+      "connectionString": "p/D2UxdUZq/j19GwXVUWEw==!0WAKDYcDk29kC3O21Zt+2VqnffRxQmyej5O7X7H9nhNy5UAcXbRaXqXSCGY1b3GzgvZKL+beHLI6m/UvNk0mS689G5MHSd7MQlbLQRFWGWVpMF/lTqPWTOPTX7re6F7TqWi4aQUAD+QXZli9ZgzGOpe+m2eWrwfgk0HNuXkw79dG0kip/HDPVT1BjBtWj+h6Rpg75+lnaYTNR9kdY1vFcw==",
+      "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+      "subscriptionId": "7a753527-b19c-44e0-954e-1cd74cbb5b62",
+      "resourceGroup": "finwin",
+      "serviceName": "finwin",
+      "type": "blob",
+      "id": "2"
+    },
+    {
       "appId": "",
       "appPassword": "",
-      "id": "1"
+      "endpoint": "http://localhost:3978/api/messages",
+      "type": "endpoint",
+      "name": "development",
+      "id": "3"
+    },
+    {
+      "appId": "7a13116d-7298-4b35-85e5-82345d9565db",
+      "appPassword": "A8DbBNwSTYKO7Zk2hGaP4w==!5TMTywkmktVsTL8w6BgjnkaFbohcx+9fwfgfjEhxNu4=",
+      "endpoint": "https://finwinbot.azurewebsites.net/api/messages",
+      "type": "endpoint",
+      "name": "production",
+      "id": "4"
+    },
+    {
+      "appId": "299c9869-58cf-4456-8a5c-ff0e03b58775",
+      "authoringKey": "nLKEeZrLuUt7TCvRloPqDw==!wUfcmQIqZllWrQQetj0uq4X9EECqp+9i3p4v1iNTyetUUUE+hAGUqe2n8Ni+MbF7",
+      "region": "australiaeast",
+      "type": "luis",
+      "name": "BasicBotLuisApplication",
+      "id": "5"
     }
-  ],
-  "padlock": "",
-  "version": "2.0"
+  ]
 }

@@ -10,7 +10,7 @@
     {
       "type": "luis",
       "id": "34",
-      "name": "basic-bot-LUIS"
+      "name": "finwin-LUIS"
     },
     {
       "type": "abs",

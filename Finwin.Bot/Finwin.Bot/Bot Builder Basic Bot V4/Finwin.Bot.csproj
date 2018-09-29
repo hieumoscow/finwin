@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <CodeAnalysisRuleSet>BasicBot.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>FinwinBot.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,10 +33,6 @@
     <None Update="BotConfiguration.bot">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Dialogs\Greeting\Resources\" />
   </ItemGroup>
 
 </Project>
