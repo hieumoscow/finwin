@@ -31,7 +31,7 @@ namespace Finwin.Bot
         /// Key in the bot config (.bot file) for the LUIS instance.
         /// In the .bot file, multiple instances of LUIS can be configured.
         /// </summary>
-        public static readonly string LuisKey = "LuisBot";
+        public static readonly string FinwinKey = "finwin";
 
         /// <summary>
         /// Services configured from the ".bot" file.
@@ -45,9 +45,9 @@ namespace Finwin.Bot
         public FinwinBot(BotServices services)
         {
             _services = services ?? throw new System.ArgumentNullException(nameof(services));
-            if (!_services.LuisServices.ContainsKey(LuisKey))
+            if (!_services.LuisServices.ContainsKey(FinwinKey))
             {
-                throw new System.ArgumentException($"Invalid configuration.  Please check your '.bot' file for a LUIS service named '{LuisKey}'.");
+                throw new System.ArgumentException($"Invalid configuration.  Please check your '.bot' file for a LUIS service named '{FinwinKey}'.");
             }
         }
 
@@ -66,7 +66,7 @@ namespace Finwin.Bot
             if (turnContext.Activity.Type == ActivityTypes.Message)
             {
                 // Check LUIS model
-                var recognizerResult = await _services.LuisServices[LuisKey].RecognizeAsync(turnContext, cancellationToken);
+                var recognizerResult = await _services.LuisServices[FinwinKey].RecognizeAsync(turnContext, cancellationToken);
                 var topIntent = recognizerResult?.GetTopScoringIntent();
                 if (topIntent != null && topIntent.HasValue && topIntent.Value.intent != "None")
                 {

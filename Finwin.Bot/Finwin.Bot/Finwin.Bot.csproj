@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Finwin.bot">
+    <None Update="finwinbot.bot">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -60,7 +60,7 @@ namespace Finwin.Bot
             var botFilePath = Configuration.GetSection("botFilePath")?.Value;
 
             // Loads .bot configuration file and adds a singleton that your Bot can access through dependency injection.
-            var botConfig = BotConfiguration.Load(botFilePath ?? @".\Finwin.bot", secretKey);
+            var botConfig = BotConfiguration.Load(botFilePath ?? @".\finwinbot.bot", secretKey);
             services.AddSingleton(sp => botConfig ?? throw new InvalidOperationException($"The .bot config file could not be loaded. ({botConfig})"));
 
             // Add BotServices singleton.
