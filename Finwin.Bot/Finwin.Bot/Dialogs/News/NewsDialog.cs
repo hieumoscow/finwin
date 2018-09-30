@@ -11,6 +11,7 @@ using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Finwin.Bot.Dialogs
 {
@@ -29,7 +30,16 @@ namespace Finwin.Bot.Dialogs
         public const string newsType = "news_type"; //100";
         public const string stockCode = "stock_code"; //100";
 
+        /// <summary>
+        /// 
+        /// </summary>
         public IStatePropertyAccessor<NewsState> NewsAccessor { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private const string PersistedValues = "values";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="NewsDialog"/> class.
         /// </summary>
@@ -40,6 +50,14 @@ namespace Finwin.Bot.Dialogs
             : base(nameof(NewsDialog))
         {
             NewsAccessor = newsStateAccessor ?? throw new ArgumentNullException(nameof(newsStateAccessor));
+
+            // Add control flow dialogs
+            var waterfallSteps = new WaterfallStep[]
+            {
+
+            };
+
+            //AddDialog(new WaterfallDialog(nameof(NewsDialog), waterfallSteps));
         }
 
         /// <summary>
@@ -140,36 +158,42 @@ namespace Finwin.Bot.Dialogs
         private Task<DialogTurnResult> RunPromptAsync(DialogContext dialogContext, CancellationToken cancellationToken)
         {
             var state = GetPersistedValues(dialogContext.ActiveDialog);
+            
+            // add any LUIS entities to active dialog state.
+            if (state.ContainsKey("luisResult"))
+            {
+                var result = state["luisResult"];
+            }
 
             // Run through the list of slots until we find one that hasn't been filled yet.
-            var unfilledSlot = _slots.FirstOrDefault((item) => !state.ContainsKey(item.Name));
+            //var unfilledSlot = _slots.FirstOrDefault((item) => !state.ContainsKey(item.Name));
 
             // If we have an unfilled slot we will try to fill it
-            if (unfilledSlot != null)
+            //if (unfilledSlot != null)
             {
                 // The name of the slot we will be prompting to fill.
-                dialogContext.ActiveDialog.State[SlotName] = unfilledSlot.Name;
+                //dialogContext.ActiveDialog.State[SlotName] = unfilledSlot.Name;
 
                 // If the slot contains prompt text create the PromptOptions.
 
                 // Run the child dialog
-                return dialogContext.BeginDialogAsync(unfilledSlot.DialogId, unfilledSlot.Options, cancellationToken);
+                return dialogContext.BeginDialogAsync("", null, cancellationToken);
             }
-            else
+            //else
             {
                 // No more slots to fill so end the dialog.
-                return dialogContext.EndDialogAsync(state);
+                //return dialogContext.EndDialogAsync(state);
             }
         }
   
-        public async Task SerialNumber(DialogContext context, LuisResult result)
+        async Task SerialNumber(DialogContext context)
         {
             string tempCompany = "not found";
             string tempCompanyItem = "not found";
             string tempNewsType = "not found";
             string tempStockCode = "not found";
 
-            if (result.TryFindEntity(company, out entity))
+            /*if (result.TryFindEntity(company, out entity))
             {
                 tempCompany = entity.Entity;
             }
@@ -184,7 +208,7 @@ namespace Finwin.Bot.Dialogs
             if (result.TryFindEntity(stockCode, out entity))
             {
                 tempStockCode = entity.Entity;
-            }
+            }*/
 
             using (var client = new HttpClient())
             {

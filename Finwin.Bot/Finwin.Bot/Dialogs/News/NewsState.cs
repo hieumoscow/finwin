@@ -8,5 +8,8 @@ namespace Finwin.Bot.Dialogs
     /// </summary>
     public class NewsState
     {
+        public string NewsType;
+
+        public string Company;
     }
 }

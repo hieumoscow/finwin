@@ -17,6 +17,8 @@ using Newtonsoft.Json;
 
 using Finwin.Bot;
 using Finwin.Bot.Dialogs;
+using Newtonsoft.Json.Linq;
+using System.Net.Http;
 
 namespace Finwin.Bot
 {
@@ -93,21 +95,7 @@ namespace Finwin.Bot
                 var topScoringIntent = luisResults?.GetTopScoringIntent();
 
                 var topIntent = topScoringIntent.Value.intent;
-
-                // update greeting state with any entities captured
-                await UpdateGreetingState(luisResults, dc.Context);
-
-                // Handle conversation interrupts first.
-                var interrupted = await IsTurnInterruptedAsync(dc, topIntent);
-                if (interrupted)
-                {
-                    // Bypass the dialog.
-                    // Save state before the next turn.
-                    await _conversationState.SaveChangesAsync(turnContext);
-                    await _userState.SaveChangesAsync(turnContext);
-                    return;
-                }
-
+                
                 // Continue the current dialog
                 var dialogResult = await dc.ContinueDialogAsync();
 
@@ -120,12 +108,8 @@ namespace Finwin.Bot
                         case DialogTurnStatus.Empty:
                             switch (topIntent)
                             {
-                                case GreetingIntent:
-                                    //await dc.BeginDialogAsync(nameof(NewsDialog));
-                                    break;
-
                                 case NewsIntent:
-                                    await dc.BeginDialogAsync(nameof(NewsDialog));
+                                    await UpdateNewsState(luisResults, dc.Context);
                                     break;
 
                                 case NoneIntent:
@@ -175,40 +159,17 @@ namespace Finwin.Bot
             await _userState.SaveChangesAsync(turnContext);
         }
 
-        // Determine if an interruption has occured before we dispatch to any active dialog.
-        private async Task<bool> IsTurnInterruptedAsync(DialogContext dc, string topIntent)
+        // Get entities from LUIS result
+        private T GetEntity<T>(RecognizerResult luisResult, string entityKey)
         {
-            // See if there are any conversation interrupts we need to handle.
-            if (topIntent.Equals(CancelIntent))
+            var data = luisResult.Entities as IDictionary<string, JToken>;
+            if (data.TryGetValue(entityKey, out JToken value))
             {
-                if (dc.ActiveDialog != null)
-                {
-                    await dc.CancelAllDialogsAsync();
-                    await dc.Context.SendActivityAsync("Ok. I've cancelled our last activity.");
-                }
-                else
-                {
-                    await dc.Context.SendActivityAsync("I don't have anything to cancel.");
-                }
-
-                return true;        // Handled the interrupt.
+                return value.First.Value<T>();
             }
-
-            if (topIntent.Equals(HelpIntent))
-            {
-                await dc.Context.SendActivityAsync("Let me try to provide some help.");
-                await dc.Context.SendActivityAsync("I understand greetings, being asked for help, or being asked to cancel what I am doing.");
-                if (dc.ActiveDialog != null)
-                {
-                    await dc.RepromptDialogAsync();
-                }
-
-                return true;        // Handled the interrupt.
-            }
-
-            return false;           // Did not handle the interrupt.
+            return default(T);
         }
-
+        
         // Create an attachment message response.
         private Activity CreateResponse(Activity activity, Attachment attachment)
         {
@@ -228,52 +189,32 @@ namespace Finwin.Bot
             };
         }
 
-        /// <summary>
-        /// Helper function to update greeting state with entities returned by LUIS.
-        /// </summary>
-        /// <param name="luisResult">LUIS recognizer <see cref="RecognizerResult"/>.</param>
-        /// <param name="turnContext">A <see cref="ITurnContext"/> containing all the data needed
-        /// for processing this conversation turn.</param>
-        /// <returns>A task that represents the work queued to execute.</returns>
-        private async Task UpdateGreetingState(RecognizerResult luisResult, ITurnContext turnContext)
+        private async Task UpdateNewsState(RecognizerResult luisResult, ITurnContext turnContext)
         {
             if (luisResult.Entities != null && luisResult.Entities.HasValues)
             {
-                // Get latest GreetingState
-                var greetingState = await _greetingStateAccessor.GetAsync(turnContext, () => new NewsState());
+                var newsState = await _greetingStateAccessor.GetAsync(turnContext, () => new NewsState());
                 var entities = luisResult.Entities;
 
-                // Supported LUIS Entities
-                string[] userNameEntities = { "userName", "userName_patternAny" };
-                string[] userLocationEntities = { "userLocation", "userLocation_patternAny" };
+                var company = GetEntity<string>(luisResult, "company");
+                var stock_code = GetEntity<string>(luisResult, "stock_code");
+                var news_type = GetEntity<string>(luisResult, "news_type");
+                var company_item = GetEntity<string>(luisResult, "company_item");
 
-                // Update any entities
-                // Note: Consider a confirm dialog, instead of just updating.
-                foreach (var name in userNameEntities)
+                using (var client = new HttpClient())
                 {
-                    // Check if we found valid slot values in entities returned from LUIS.
-                    if (entities[name] != null)
-                    {
-                        // Capitalize and set new user name.
-                        var newName = (string)entities[name][0];
-                        //greetingState.Name = char.ToUpper(newName[0]) + newName.Substring(1);
-                        break;
-                    }
-                }
+                    var url = string.Format("http://finwin.azurewebsites.net/api/QueryBingNews");
 
-                foreach (var city in userLocationEntities)
-                {
-                    if (entities[city] != null)
-                    {
-                        // Captilize and set new city.
-                        var newCity = (string)entities[city][0];
-                        //greetingState.City = char.ToUpper(newCity[0]) + newCity.Substring(1);
-                        break;
-                    }
-                }
+                    var query = new { Query = stock_code };
+                    var content = new StringContent(JsonConvert.SerializeObject(query));
 
-                // Set the new values into state.
-                await _greetingStateAccessor.SetAsync(turnContext, greetingState);
+                    var response = await client.PostAsync(url, content);
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+
+                    string message = $"response={jsonResponse}";
+
+                    await turnContext.SendActivityAsync(message);
+                }
             }
         }
     }
