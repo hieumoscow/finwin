@@ -1,6 +1,6 @@
 ﻿{
   "name": "finwinbot",
-  "padlock": "Ge71/oFEEVcy8VYhnuqgOw==!SqFGoWuIVtaPrDx3gCwDJxjt8PjpRV+xqJGPQizAqQFNcXtXWNBSRIfFC0Ca0cDN",
+  "padlock": "KGeS9CwzmEEYY/EJIK+gXw==!5DGSc9YTsPtA4061WXhUN2FvVamPMQq2hY0jLAWc2F0XSuvblY2CfH2iRFBndU0q",
   "version": "2.0",
   "services": [
     {
@@ -13,11 +13,11 @@
       "id": "1"
     },
     {
-      "connectionString": "p/D2UxdUZq/j19GwXVUWEw==!0WAKDYcDk29kC3O21Zt+2VqnffRxQmyej5O7X7H9nhNy5UAcXbRaXqXSCGY1b3GzgvZKL+beHLI6m/UvNk0mS689G5MHSd7MQlbLQRFWGWVpMF/lTqPWTOPTX7re6F7TqWi4aQUAD+QXZli9ZgzGOpe+m2eWrwfgk0HNuXkw79dG0kip/HDPVT1BjBtWj+h6Rpg75+lnaYTNR9kdY1vFcw==",
+      "connectionString": "+ImuvhBVMvwtv4mDmkFQvg==!tQHqJq8BslGdRPBcSMZMb2RdNhm9Cx9I+HwPjP3PDqtZeSZ8b1I7Y4vmassvrjLPgw94Z0jQhRMdcVcP6z6BZq09FG7b6kn8oxCTW2jpVHykHEXJ8XHcBKI4MmNn1QwLEzb2PyEx+aFIVkw3B4hIS6xPBSRsCWjiL647k86FWyXw/mOptBjlgnMdqlFP6FSlWorBe2gPwNFHwzV1B0EzXg==",
       "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
       "subscriptionId": "7a753527-b19c-44e0-954e-1cd74cbb5b62",
       "resourceGroup": "finwin",
-      "serviceName": "finwin",
+      "serviceName": "finwinbot9fc3",
       "type": "blob",
       "id": "2"
     },
@@ -30,17 +30,17 @@
       "id": "3"
     },
     {
-      "appId": "7a13116d-7298-4b35-85e5-82345d9565db",
-      "appPassword": "A8DbBNwSTYKO7Zk2hGaP4w==!5TMTywkmktVsTL8w6BgjnkaFbohcx+9fwfgfjEhxNu4=",
+      "appId": "45fba27d-6fa9-43e0-9153-60f89e58eacb",
+      "appPassword": "iPQ7yTuqEgmTKxro1LgltA==!lvkPQnQzZ92eCaC/kWdqo39lfqwMMCXmAv/5gMdKJM0=",
       "endpoint": "https://finwinbot.azurewebsites.net/api/messages",
       "type": "endpoint",
       "name": "production",
       "id": "4"
     },
     {
-      "appId": "299c9869-58cf-4456-8a5c-ff0e03b58775",
-      "authoringKey": "nLKEeZrLuUt7TCvRloPqDw==!wUfcmQIqZllWrQQetj0uq4X9EECqp+9i3p4v1iNTyetUUUE+hAGUqe2n8Ni+MbF7",
-      "region": "australiaeast",
+      "appId": "fed1ea4f-a4e5-46f8-ba22-e5d19aefd996",
+      "authoringKey": "Hub5Fva+Z9iVpLo/PykMUg==!7GsR4D0BKTGrr8Wtv9d4V56RPY/r/wdGv+UakRWwKqRezZ/s4czxIaLD/vjTqXaT",
+      "region": "westus",
       "type": "luis",
       "name": "BasicBotLuisApplication",
       "id": "5"

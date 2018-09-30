@@ -1,21 +1,11 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
 using Microsoft.Bot.Builder;
-using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
-using Microsoft.Extensions.Logging;
-
-using Newtonsoft.Json;
 
 namespace Finwin.Bot
 {
@@ -31,7 +21,7 @@ namespace Finwin.Bot
         /// Key in the bot config (.bot file) for the LUIS instance.
         /// In the .bot file, multiple instances of LUIS can be configured.
         /// </summary>
-        public static readonly string FinwinKey = "finwin";
+        public static readonly string FinwinKey = "BasicBotLuisApplication";
 
         /// <summary>
         /// Services configured from the ".bot" file.
