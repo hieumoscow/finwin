@@ -48,6 +48,8 @@
     <None Remove="bin\Debug\netstandard2.0\Finwin\function.json" />
     <None Remove="bin\Debug\netstandard2.0\QueryBingNews\function.json" />
     <None Remove="bin\Debug\netstandard2.0\QueryNewsApi\function.json" />
+    <None Remove="bin\Debug\netstandard2.0\QueryBingNews\function.json" />
+    <None Remove="bin\Debug\netstandard2.0\QueryNewsApi\function.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="**/*" />
@@ -65,6 +67,7 @@
     <Folder Include="Services\" />
     <Folder Include="Functions\" />
     <Folder Include="Contracts\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Functions\AnalyseText.cs" />
