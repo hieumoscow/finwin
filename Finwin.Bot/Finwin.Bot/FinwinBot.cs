@@ -19,6 +19,8 @@ using Finwin.Bot;
 using Finwin.Bot.Dialogs;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
+using Microsoft.WindowsAzure.Storage.Blob;
+using Finwin.Bot.Contracts;
 
 namespace Finwin.Bot
 {
@@ -204,18 +206,58 @@ namespace Finwin.Bot
                 using (var client = new HttpClient())
                 {
                     var url = string.Format("http://finwin.azurewebsites.net/api/QueryBingNews");
-
                     var query = new { Query = stock_code };
                     var content = new StringContent(JsonConvert.SerializeObject(query));
-
                     var response = await client.PostAsync(url, content);
                     var jsonResponse = await response.Content.ReadAsStringAsync();
 
-                    string message = $"response={jsonResponse}";
+                    var news = JsonConvert.DeserializeObject<News>(jsonResponse);
+                    var response = news == null ? "News State Error" : "News Updating";
+
+                    string message = $"response={response}";
 
                     await turnContext.SendActivityAsync(message);
                 }
             }
         }
+
+        /// <summary>
+        /// Saves the image.
+        /// </summary>
+        /// <returns>The image.</returns>
+        /// <param name="image">Image.</param>
+        /// <param name="gameId">Game identifier.</param>
+        /// <param name="treasureId">Treasure identifier.</param>
+        public static async Task<string> SaveBlob(object blob, string token)
+        {
+            try
+            {
+                var uri = new Uri(token);
+
+                var blockBlob = new CloudBlockBlob(uri);
+                //blockBlob.Properties.ContentType = "image/jpg";
+                //blockBlob.Metadata.Add("gameId", gameId);
+
+                using (var ms = new MemoryStream())
+                {
+                    var json = JsonConvert.SerializeObject(blob);
+                    StreamWriter writer = new StreamWriter(ms);
+                    writer.Write(json);
+                    writer.Flush();
+                    ms.Position = 0;
+
+                    await blockBlob.UploadFromStreamAsync(ms);
+                }
+
+                return blockBlob.StorageUri.PrimaryUri.ToString();
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return null;
+        }
+
     }
 }

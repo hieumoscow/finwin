@@ -64,9 +64,8 @@ namespace Finwin.Backend.Functions
                     _container = _blobClient.GetContainerReference(containerName);
 
                     var sasUri = await GetSASToken(blobName);
-                    var blobUri = SaveBlob(blobName, sasUri);
 
-                    return (ActionResult)new OkObjectResult(blobUri);
+                    return (ActionResult)new OkObjectResult(sasUri);
                 }
                 catch (Exception e)
                 {
@@ -76,44 +75,6 @@ namespace Finwin.Backend.Functions
                     return new BadRequestObjectResult(e);
                 }
             }
-        }
-
-        /// <summary>
-        /// Saves the image.
-        /// </summary>
-        /// <returns>The image.</returns>
-        /// <param name="image">Image.</param>
-        /// <param name="gameId">Game identifier.</param>
-        /// <param name="treasureId">Treasure identifier.</param>
-        public static async Task<string> SaveBlob(object blob, string token)
-        {
-            try
-            {
-                var uri = new Uri(token);
-
-                var blockBlob = new CloudBlockBlob(uri);
-                //blockBlob.Properties.ContentType = "image/jpg";
-                //blockBlob.Metadata.Add("gameId", gameId);
-
-                using (var ms = new MemoryStream())
-                {
-                    var json = JsonConvert.SerializeObject(blob);
-                    StreamWriter writer = new StreamWriter(ms);
-                    writer.Write(json);
-                    writer.Flush();
-                    ms.Position = 0;
-
-                    await blockBlob.UploadFromStreamAsync(ms);
-                }
-
-                return blockBlob.StorageUri.PrimaryUri.ToString();
-            }
-            catch (Exception e)
-            {
-
-            }
-
-            return null;
         }
 
         /// <summary>
