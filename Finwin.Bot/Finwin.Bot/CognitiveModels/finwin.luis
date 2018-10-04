@@ -1,0 +1,218 @@
+﻿{
+  "luis_schema_version": "3.1.0",
+  "versionId": "0.1",
+  "name": "finwin-LUIS",
+  "desc": "Financial Win",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "News"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [
+    {
+      "name": "company",
+      "roles": []
+    },
+    {
+      "name": "company_item",
+      "roles": []
+    },
+    {
+      "name": "news_type",
+      "roles": []
+    },
+    {
+      "name": "stock_code",
+      "roles": []
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "any business news for cba",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "company_item",
+          "startPos": 13,
+          "endPos": 16
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 22,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "any finance news for cba",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "news_type",
+          "startPos": 4,
+          "endPos": 10
+        },
+        {
+          "entity": "company_item",
+          "startPos": 12,
+          "endPos": 15
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 21,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "any news for cba",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "company_item",
+          "startPos": 4,
+          "endPos": 7
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 13,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "any news for commonwealth bank",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "company_item",
+          "startPos": 4,
+          "endPos": 7
+        },
+        {
+          "entity": "company",
+          "startPos": 13,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "can i have business news for commonwealth bank",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "news_type",
+          "startPos": 11,
+          "endPos": 18
+        },
+        {
+          "entity": "company_item",
+          "startPos": 20,
+          "endPos": 23
+        },
+        {
+          "entity": "company",
+          "startPos": 29,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "can i have finance news for cba",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "news_type",
+          "startPos": 11,
+          "endPos": 17
+        },
+        {
+          "entity": "company_item",
+          "startPos": 19,
+          "endPos": 22
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 28,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "can i please finance news for commonwealth bank",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "news_type",
+          "startPos": 13,
+          "endPos": 19
+        },
+        {
+          "entity": "company_item",
+          "startPos": 21,
+          "endPos": 24
+        },
+        {
+          "entity": "company",
+          "startPos": 30,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "can i please have finance news for cba",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "news_type",
+          "startPos": 18,
+          "endPos": 24
+        },
+        {
+          "entity": "company_item",
+          "startPos": 26,
+          "endPos": 29
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 35,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "is there any finance news for cba",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "news_type",
+          "startPos": 13,
+          "endPos": 19
+        },
+        {
+          "entity": "company_item",
+          "startPos": 21,
+          "endPos": 24
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 30,
+          "endPos": 32
+        }
+      ]
+    }
+  ],
+  "settings": []
+}
