@@ -40,7 +40,7 @@ namespace Finwin.Bot
         /// </summary>
         public static readonly string FinwinKey = "BasicBotLuisApplication";
 
-        private readonly IStatePropertyAccessor<NewsState> _greetingStateAccessor;
+        private readonly IStatePropertyAccessor<NewsState> _newsStateAccessor;
         private readonly IStatePropertyAccessor<DialogState> _dialogStateAccessor;
         private readonly UserState _userState;
         private readonly ConversationState _conversationState;
@@ -57,7 +57,7 @@ namespace Finwin.Bot
             _userState = userState ?? throw new ArgumentNullException(nameof(userState));
             _conversationState = conversationState ?? throw new ArgumentNullException(nameof(conversationState));
 
-            _greetingStateAccessor = _userState.CreateProperty<NewsState>(nameof(NewsState));
+            _newsStateAccessor = _userState.CreateProperty<NewsState>(nameof(NewsState));
             _dialogStateAccessor = _conversationState.CreateProperty<DialogState>(nameof(DialogState));
 
             // Verify LUIS configuration.
@@ -67,7 +67,7 @@ namespace Finwin.Bot
             }
 
             Dialogs = new DialogSet(_dialogStateAccessor);
-            Dialogs.Add(new NewsDialog(_greetingStateAccessor, loggerFactory));
+            Dialogs.Add(new NewsDialog(_newsStateAccessor, loggerFactory));
         }
 
         private DialogSet Dialogs { get; set; }
@@ -193,7 +193,7 @@ namespace Finwin.Bot
         {
             if (luisResult.Entities != null && luisResult.Entities.HasValues)
             {
-                var newsState = await _greetingStateAccessor.GetAsync(turnContext, () => new NewsState());
+                var newsState = await _newsStateAccessor.GetAsync(turnContext, () => new NewsState());
                 var entities = luisResult.Entities;
 
                 var company = GetEntity<string>(luisResult, "company");

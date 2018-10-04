@@ -54,10 +54,39 @@ namespace Finwin.Bot.Dialogs
             // Add control flow dialogs
             var waterfallSteps = new WaterfallStep[]
             {
-
+                    InitializeStateStepAsync,
+                    //PromptForNameStepAsync,
+                    //PromptForCityStepAsync,
+                    //DisplayGreetingStateStepAsync,
             };
 
-            //AddDialog(new WaterfallDialog(nameof(NewsDialog), waterfallSteps));
+            AddDialog(new WaterfallDialog("NewsDialog", waterfallSteps));
+
+            //AddDialog(new TextPrompt(NamePrompt, ValidateName));
+
+            //AddDialog(new TextPrompt(CityPrompt, ValidateCity));
+        }
+
+        private async Task<DialogTurnResult> InitializeStateStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            var newsState = await NewsAccessor.GetAsync(stepContext.Context, () => null);
+
+            if (newsState == null)
+            {
+                var newsStateOpt = stepContext.Options as NewsState;
+
+                if (newsStateOpt != null)
+                {
+                    await NewsAccessor.SetAsync(stepContext.Context, newsStateOpt);
+                }
+                else
+                {
+                    await NewsAccessor.SetAsync(stepContext.Context, new NewsState());
+                }
+
+            }
+
+            return await stepContext.NextAsync();
         }
 
         /// <summary>
