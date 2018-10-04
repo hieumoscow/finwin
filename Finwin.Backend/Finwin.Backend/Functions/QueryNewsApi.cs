@@ -44,7 +44,7 @@ namespace Finwin.Backend.Functions
                     using (var newsApi = new NewsApiService())
                     {
                         var news = await newsApi.Query(query);
-                        return (ActionResult)new OkObjectResult(news);
+                        return new OkObjectResult(news);
                     }
                 }
                 catch (Exception e)

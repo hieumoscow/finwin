@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Finwin.Common.Contracts
+namespace Finwin.Common.Models
 {
     public class QueryContext
     {

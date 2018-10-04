@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Finwin.Backend.Contracts
+namespace Finwin.Common.Contracts
 {
     public class Source
     {

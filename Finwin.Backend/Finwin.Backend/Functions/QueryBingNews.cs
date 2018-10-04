@@ -1,24 +1,17 @@
-﻿using System.Net;
-using System.Net.Http;
+﻿
 using System;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Web;
 using System.Threading.Tasks;
 using System.IO;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Azure.WebJobs;
 using Microsoft.ApplicationInsights.DataContracts;
 
 using Newtonsoft.Json;
 
 using Finwin.Backend.Services;
-using Finwin.Backend.Contracts;
 
 namespace Finwin.Backend.Functions
 {
@@ -44,7 +37,7 @@ namespace Finwin.Backend.Functions
                     using (var newsApi = new BingNewsService())
                     {
                         var news = await newsApi.Query(query);
-                        return (ActionResult)new OkObjectResult(news);
+                        return new OkObjectResult(news);
                     }
                 }
                 catch (Exception e)

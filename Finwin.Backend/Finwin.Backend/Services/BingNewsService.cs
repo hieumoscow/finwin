@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 using Finwin.Backend.Functions;
-using Finwin.Backend.Contracts;
+using Finwin.Common.Contracts;
 
 namespace Finwin.Backend.Services
 {
@@ -25,7 +25,8 @@ namespace Finwin.Backend.Services
                 var url = string.Format(ConfigManager.Instance.BingNewsUrl, query);
 
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
-                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", ConfigManager.Instance.BingNewsApiKey);
+                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", 
+                    ConfigManager.Instance.BingNewsApiKey);
 
                 var response = await client.GetAsync(url);
 

@@ -1,6 +1,6 @@
 using System;
 
-namespace Finwin.Backend.Functions.Models
+namespace Finwin.Common.Models
 {
 	public class StorageToken
 	{

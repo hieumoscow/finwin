@@ -10,41 +10,6 @@
     <PackageReference Include="Microsoft.Azure.DocumentDB" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\Microsoft.ApplicationInsights.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\Microsoft.AspNetCore.Authentication.Core.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\Microsoft.AspNetCore.Authorization.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\Microsoft.AspNetCore.Authorization.Policy.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\unix\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\win\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\osx\lib\netstandard1.6\System.Security.Cryptography.Algorithms.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\unix\lib\netstandard1.6\System.Security.Cryptography.Algorithms.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\unix\lib\netstandard1.6\System.Security.Cryptography.Cng.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\win\lib\netstandard1.6\System.Security.Cryptography.Cng.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\unix\lib\netstandard1.3\System.Security.Cryptography.Csp.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\win\lib\netstandard1.3\System.Security.Cryptography.Csp.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\unix\lib\netstandard1.3\System.Security.Cryptography.Encoding.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\win\lib\netstandard1.3\System.Security.Cryptography.Encoding.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\System.Security.Cryptography.OpenSsl.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\unix\lib\netstandard1.6\System.Security.Cryptography.OpenSsl.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\System.Security.Cryptography.Primitives.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\unix\lib\netstandard1.6\System.Security.Cryptography.X509Certificates.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\win\lib\netstandard1.6\System.Security.Cryptography.X509Certificates.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\unix\lib\netstandard1.3\System.Text.Encoding.CodePages.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\runtimes\win\lib\netstandard1.3\System.Text.Encoding.CodePages.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\System.Text.Encodings.Web.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\System.Text.RegularExpressions.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\System.Threading.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\System.Threading.Tasks.Dataflow.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\System.Threading.Tasks.Extensions.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\System.Threading.Thread.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\System.Threading.ThreadPool.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\System.Xml.ReaderWriter.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\System.Xml.XmlDocument.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\System.Xml.XmlSerializer.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\Microsoft.WindowsAzure.Storage.dll" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\Finwin.Backend.deps.json" />
-    <None Remove="obj\Release\netstandard2.0\PubTmp\Out\bin\extensions.json" />
     <None Remove="bin\Debug\netstandard2.0\Finwin\function.json" />
     <None Remove="bin\Debug\netstandard2.0\QueryBingNews\function.json" />
     <None Remove="bin\Debug\netstandard2.0\QueryNewsApi\function.json" />
@@ -67,9 +32,11 @@
     <Folder Include="Services\" />
     <Folder Include="Functions\" />
     <Folder Include="Contracts\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Functions\AnalyseText.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Finwin.Common\Finwin.Common.csproj" />
   </ItemGroup>
 </Project>

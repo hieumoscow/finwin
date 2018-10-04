@@ -14,8 +14,6 @@ using Microsoft.AspNetCore.Http;
 
 using Newtonsoft.Json;
 
-using Finwin.Backend.Functions.Models;
-
 namespace Finwin.Backend.Functions
 {
 	public static class GetStorageToken
@@ -65,7 +63,7 @@ namespace Finwin.Backend.Functions
 
                     var sasUri = await GetSASToken(blobName);
 
-                    return (ActionResult)new OkObjectResult(sasUri);
+                    return new OkObjectResult(sasUri);
                 }
                 catch (Exception e)
                 {
