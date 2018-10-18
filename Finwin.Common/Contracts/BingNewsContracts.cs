@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Finwin.Common.Models;
+using System;
 using System.Collections.Generic;
 
 namespace Finwin.Common.Contracts
@@ -41,7 +42,7 @@ namespace Finwin.Common.Contracts
         public string name { get; set; }
     }
 
-    public class Value
+    public class Value : BaseModel
     {
         public string name { get; set; }
         public string url { get; set; }
@@ -51,6 +52,10 @@ namespace Finwin.Common.Contracts
         public List<Provider> provider { get; set; }
         public DateTime datePublished { get; set; }
         public string category { get; set; }
+
+        public string StockCode { get; set; }
+
+        public string Company { get; set; }
     }
 
     public class BingNewsContract

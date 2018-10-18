@@ -1,24 +1,32 @@
 ﻿{
   "luis_schema_version": "3.1.0",
   "versionId": "0.1",
-  "name": "finwin-LUIS",
-  "desc": "Financial Win",
+  "name": "finwinbot-9fc3",
+  "desc": "Default Intents for Azure Bot Service V2",
   "culture": "en-us",
   "intents": [
+    {
+      "name": "Cancel"
+    },
+    {
+      "name": "Greeting"
+    },
+    {
+      "name": "Help"
+    },
     {
       "name": "News"
     },
     {
       "name": "None"
+    },
+    {
+      "name": "Videos"
     }
   ],
   "entities": [
     {
       "name": "company",
-      "roles": []
-    },
-    {
-      "name": "company_item",
       "roles": []
     },
     {
@@ -28,6 +36,10 @@
     {
       "name": "stock_code",
       "roles": []
+    },
+    {
+      "name": "topic",
+      "roles": []
     }
   ],
   "composites": [],
@@ -35,16 +47,56 @@
   "patternAnyEntities": [],
   "regex_entities": [],
   "prebuiltEntities": [],
-  "model_features": [],
+  "model_features": [
+    {
+      "name": "ASX Company Names",
+      "mode": true,
+      "words": "moq limited,1300 smiles limited,1414 degrees limited,1st group limited,333d limited,360 capital group,360 capital total return fund,3d oil limited,3d resources limited,3g coal limited,3p learning limited..,4ds memory limited,5g networks limited,88 energy limited,8common limited,8i holdings ltd,8ip emerging companies limited,8vic holdings limited,9 spokes international limited,99 wuxian limited,a-cap resources limited,a.c.n. 004 410 833 limited,a1 investments & resources ltd,abacus property group,abilene oil and gas limited,absolute equity performance fund limited,abundant produce limited,acacia coal limited,academies australasia group limited,accelerate resources limited,accent group limited,accent resources nl,acorn capital investment fund limited,acrow formwork and construction services limited,acrux limited,actinogen medical limited,activex limited,adacel technologies limited,adairs limited,adalta limited,adavale resources limited,adcorp australia limited,adelaide brighton limited,adherium limited,admedus ltd,admiralty resources nl.,adriatic metals plc,adslot ltd,advance nanotek limited,advanced braking technology ltd,advanced share registry limited,adx energy ltd,aeeris ltd,aeon metals limited.,aeris environmental ltd,aeris resources limited,affinity energy and health limited,african energy resources limited,aft corporation limited,aft pharmaceuticals limited,afterpay touch group limited,agl energy limited.,agricultural land trust,agrimin limited,aguia resources limited,ahalife holdings limited,aic resources limited,aims property securities fund,ainsworth game technology limited,air new zealand limited,airxpanders,inc.,aj lucas group limited,alacer gold corp.,alara resources limited,alchemia limited,alchemy resources limited,alcidion group limited,alderan resources limited,aldoro resources limited,ale property group,alexium international group limited,alicanto minerals limited,alice queen limited,alkane resources limited,allegiance coal limited,allegra orthopaedics limited,alliance aviation services limited,alliance resources limited,alligator energy limited,alloy resources limited,als limited,alt resources limited,alta zinc limited,altech chemicals ltd,alternative investment trust,alterra limited,althea group holdings limited,altium limited,alto metals limited,altura mining limited,alumina limited,ama group limited,amani gold limited,amaysim australia limited,ambertech limited,ambition group limited,amcil limited,amcor limited,american pacific borate & lithium limited,american patriot oil & gas limited,amp limited,amplia therapeutics limited,anaeco limited,analytica limited,anatara lifesciences ltd,anchor resources limited,andromeda metals limited,aneka tambang (persero) tbk (pt),angel seafood holdings ltd,anglo american capital plc,anglo australian resources nl,anglogold ashanti limited,animoca brands corporation limited,anova metals limited,ansell limited,anson resources limited,ante real estate trust,anteo diagnostics limited,antilles oil and gas nl,antipa minerals limited,antipodes global investment company ltd,antisense therapeutics limited,ap eagers limited,apa group,apiam animal health limited,apn outdoor group limited,apn property group limited,apollo consolidated limited,apollo minerals limited,apollo series 2010-1 trust,apollo series 2013-1 trust,apollo series 2015-1 trust,apollo series 2017-2 trust,apollo series 2018-1 trust,apollo tourism & leisure ltd,appen limited,appetise (holdings) limited,applydirect limited,apt pipelines limited.,aquis entertainment limited,arafura resources limited,arb corporation limited.,arc exploration limited,archer exploration limited,archtis limited,ardea resources limited,ardent leisure group,ardiden ltd,arena reit.,argent minerals limited,argo exploration limited,argo global listed infrastructure limited,argo investments limited,argonaut resources nl,argosy minerals limited,ariadne australia limited,aristocrat leisure limited,ark mines limited,armour energy limited,arowana international limited,arq group limited,arrow minerals ltd,artemis resources limited,aruma resources limited,asaleo care limited,asaplus resources limited,asf group limited,ashley services group limited,asia pacific data centre group,asian american medical group limited,asian development bank,asian mineral resources limited,aspen group,aspermont limited.,aspire mining limited,assemblebay limited,assetowl limited,astivita limited,astro resources nl,astron corporation limited,asx limited,atc alloys ltd,athena resources limited,atlas arteria,atlas iron limited,atlas pearls ltd,atrum coal limited,aub group limited,auckland international airport limited,auctus alternative investments limited,audalia resources limited,audinate group limited,audio pixels holdings limited,auking mining limited,aumake international limited,aura energy limited,aurelia metals limited,auris minerals limited,aurizon holdings limited,auroch minerals ltd,aurora absolute return fund,aurora global income trust,aurora labs limited,aurora minerals limited,aurora property buy-write income trust,aus asia minerals limited,aus tin mining ltd,auscann group holdings ltd,ausdrill limited,ausgold limited,ausmex mining group limited,ausmon resources limited,ausnet services holdings pty ltd,ausnet services limited,ausquest limited,austal limited,austar gold limited,austchina holdings limited,austex oil limited,austin engineering limited,austpac resources nl,austral gold limited,australia and new zealand banking group limited,australia united mining limited,australian agricultural company limited.,australian agricultural projects limited,australian bauxite limited.,australian careers network limited,australian commonwealth government loans,australian dairy farms group,australian enhanced income fund,australian ethical investment limited,australian finance group ltd,australian foundation investment company limited,australian governance & ethical index fund,australian leaders fund limited,australian masters yield fund no 4 limited,australian masters yield fund no 5 limited,australian mines limited,australian pacific coal limited,australian pharmaceutical industries limited,australian potash limited,australian rural capital limited,australian united investment company limited,australian unity limited,australian unity office fund,australian vanadium limited,australian vintage ltd,australian whisky holdings limited,australis oil & gas limited,austsino resources group limited,auswide bank ltd,authorised investment fund limited,automotive holdings group limited.,autosports group limited.,ava risk group limited,avenira limited,aventus group,aveo group,avira resources ltd,avita medical ltd,avjennings limited,avz minerals limited,axiom mining limited,axiom properties limited,axs group limited,axsesstoday limited,axxis technology group ltd,azumah resources limited,azure healthcare limited,azure minerals limited,baby bunting group limited,babylon pump & power limited,bailador technology investments limited,bank of queensland limited.,bannerman resources limited,bapcor limited,baraka energy & resources limited,bard1 life sciences limited,barra resources limited,barrack st investments limited,base resources limited,bass metals ltd,bass oil limited,bassari resources limited,bathurst resources limited.,battery minerals limited,baumart holdings limited,bauxite resources limited,bbx minerals limited,bci minerals limited,beach energy limited,beacon lighting group limited,beacon minerals limited,beadell resources limited,bega cheese limited,bell financial group limited,bellamy's australia limited,bellevue gold limited,bendigo and adelaide bank limited,benitec biopharma limited,benjamin hornigold limited,bentley capital limited,berkeley energia limited,berkut minerals limited,beston global food company limited,beyond international limited,bhp billiton limited,bidenergy limited,big river industries limited,big star energy limited,bigtincan holdings limited,bingo industries limited,bio-gene technology ltd,biomics biopharma limited,bionomics limited,biotron limited,bioxyne limited,bir financial limited,birimian limited,bisalloy steel group limited,bisan limited,bki investment company limited,bkm management limited,black cat syndicate limited,black dragon gold corp.,black rock mining limited,black star petroleum limited,blackearth minerals nl,blackham resources limited,blackmores limited,blackstone minerals limited,blackwall limited,blackwall property trust,blaze international limited,bligh resources limited,blina minerals nl,blue energy limited,blue sky alternative investments limited,blue sky alternatives access fund limited,bluechiip limited,bluescope steel limited,bluglass limited,bmg resources limited,boadicea resources limited,boart longyear limited,bod australia limited,bojun agriculture holdings limited,boom logistics limited,bora bora resources limited,boral limited.,boss resources limited,botanix pharmaceuticals ltd,bougainville copper limited,bounty mining limited,bounty oil & gas nl,bowen coking coal limited,boyuan holdings limited,bp capital markets plc,bph energy ltd,brain resource limited,brainchip holdings ltd,brambles limited,bravura solutions limited.,breaker resources nl,breville group limited,brickworks limited,brisbane broncos limited,briscoe group australasia limited,brockman mining limited,broken hill prospecting limited,bronson group limited,broo ltd,brookside energy limited,bryah resources limited,bsa limited,btc health ltd,bubs australia limited,buddy platform ltd,buderim group limited,buildingiq,inc,bulletin resources limited,bunji corporation limited,buru energy limited,buxton resources limited,buymyplace.com.au limited,bwp trust,bwx limited,byron energy limited,byte power group limited,cabcharge australia limited,cadence capital limited,caeneus minerals ltd,caisse francaise de financement local,calidus resources limited,calima energy limited,calix limited,caltex australia limited,cann group limited,cannindah resources limited,cannpal animal therapeutics limited,canyon resources limited,cape lambert resources limited,cape range ltd,capilano honey limited,capital mining limited,capitol health limited,capral limited,caprice resources ltd,capricorn metals ltd,caq holdings limited,caravel minerals limited,carawine resources limited,carbine resources limited,carbon energy limited,carbon minerals limited,carbonxt group limited,cardiex limited,cardinal resources limited,cardno limited,carindale property trust,carlton investments limited,carnarvon petroleum limited,carnavale resources limited,carnegie clean energy limited,carpentaria resources ltd,carsales.com limited.,cash converters international,cassini resources limited,cassius mining limited,castillo copper limited,castle minerals limited,catalyst metals limited,catapult group international ltd,cauldron energy limited,cazaly resources limited,cbg capital limited,cbl corporation limited,ccp technologies limited,cedar woods properties limited,celamin holdings limited,cellmid limited,cellnet group limited,celsius resources limited.,centaur resources limited,centaurus metals limited,centennial mining limited,central petroleum limited,centrepoint alliance limited,centrex metals limited,centuria capital group,centuria industrial reit,centuria metropolitan reit,century australia investments limited,cervantes corporation limited,cfoam limited,chalice gold mines limited,challenger energy limited,challenger limited,challenger millennium series 2007-1e trust,challenger millennium series 2007-2l trust,chalmers limited,champion iron limited,change financial limited,chant west holdings limited,chapmans limited,charter hall group,charter hall long wale reit,charter hall retail reit,chesser resources limited,china construction bank corporation,china magnesium corporation limited,china track limited,chongherr investments ltd,chorus limited,ci resources limited,cimic group limited,cirralto limited,cirrus networks holdings limited,citigold corporation limited,civmec limited,clancy exploration limited,clarius group limited,class limited,classic minerals ltd,clean seas seafood limited,clean teq holdings limited,cleanaway waste management limited,clearview wealth limited,clearvue technologies limited,cleveland mining company limited,clime capital limited,clime investment management ltd,clinuvel pharmaceuticals limited,clover corporation limited,cmi limited.,cml group limited,coassets limited.,cobalt blue holdings limited,coca-cola amatil limited,cochlear limited,codan limited,cogstate ltd,cohiba minerals limited,cokal limited,collaborate corporation limited,collection house limited,collerina cobalt limited,collins foods limited,comet resources limited,comet ridge limited,commonwealth bank of australia.,commschoice group limited,compagnie de financement foncier,compumedics limited,computershare limited.,concentrated leaders fund limited,conico ltd,connected io limited,connexion media limited,consolidated operations group limited,consolidated tin mines limited,consolidated zinc limited,constellation resources limited,contact energy limited,contango asset management limited,contango income generator  limited,contrarian value fund limited,convenience retail reit,coolgardie minerals limited,cooper energy limited,copper mountain mining corporation,copper strike limited,coppermoly limited,corazon mining limited,cordish dixon private equity fund i,cordish dixon private equity fund ii,cordish dixon private equity fund iii,core exploration limited,corizon limited,coronado global resources inc.,corporate travel management limited,corum group limited,costa group holdings limited,cougar metals nl,countplus limited,county international limited,covata limited,coventry group limited,cowan lithium limited,coziron resources limited,cpt global limited,cradle resources limited,crater gold mining limited,credible labs inc.,credit corp group limited,credit intelligence ltd,creso pharma limited,cromwell property group,croplogic limited,crossland strategic metals ltd,crowd mobile limited,crowdspark ltd,crown resorts limited,crusade abs series 2015-1 trust,crusade abs series 2016-1 trust,crusade abs series 2017-1 trust,crusader resources limited,cryosite limited,csg limited,csl limited,csr limited,cti logistics limited,cudeco limited,cue energy resources limited,cullen resources limited,cv check ltd,cvc limited,cybg plc,cycliq group ltd,cyclopharm limited,cygnus gold limited,cynata therapeutics limited,dacian gold limited,dampier gold limited,danakali limited,dark horse resources limited,dart mining nl,data#3 limited,datadot technology limited,dateline resources limited,davenport resources limited,dawine ltd,de grey mining limited,de.mem limited,decimal software limited,decmil group limited,deep yellow limited,delecta limited,department 13 international ltd,desane group holdings limited,devex resources limited,devine limited,dexus,dgo gold limited,dgr global limited,diatreme resources limited,dicker data limited,digitalx limited,dimerix limited,discovery africa limited,diversified united investment limited,djerriwarrh investments limited,domacom limited,domain holdings australia limited.,dome gold mines limited,domino's pizza enterprises limited,donaco international limited,dongfang modern agriculture holding group limited,doray minerals limited,doriemus plc,dorsavi ltd,dotz nano limited,downer edi limited,downer group finance pty limited,dragon mining limited,dragon mountain gold limited,dragontail systems limited,drake resources limited,dreamscape networks limited,driver australia five trust,driver australia four trust,driver australia master trust,driver australia three trust,driver australia two trust,droneshield limited,dropsuite limited,dti group ltd,dubber corporation limited,duketon mining limited,duluxgroup limited,duxton broadacre farms limited,duxton water limited,dws limited,dynasty resources limited,e2 metals limited,eagle health holdings limited,eagle mountain mining limited,east energy resources limited,eastern goldfields limited,eastern iron limited,easton investments limited,ebos group limited,ecargo holdings limited,echo resources limited,eclipse metals limited.,eclipx group limited,eden innovations ltd,egan street resources limited,ehr resources limited,eildon capital limited,elanor investors group,elanor retail property fund,elders limited,electro optic systems holdings limited,element 25 limited,elementos limited,elixinol global limited,elixir petroleum limited,elk petroleum limited,ellerston asian investments limited,ellerston global investments limited,ellex medical lasers limited,elmo software limited,elsight limited,embelton limited,emeco holdings limited,emerald resources nl,emerge gaming limited,emirates nbd pjsc,eml payments limited,emmerson resources limited,emperor energy limited,empire energy group limited,empire oil & gas nl,empire resources limited,empired ltd,emu nl,encounter resources limited,eneabba gas limited,enegex limited,energy action limited,energy metals ltd,energy one limited,energy resources of australia limited,energy technologies limited,energy world corporation ltd,enero group limited,enevis limited,engage:bdr limited,engenco limited,enhanced oil & gas recovery limited,ennox group ltd,ensogo limited,ensurance ltd,entek energy ltd,enterprise metals limited,enviromission limited,environmental clean technologies limited.,environmental group limited (the),envirosuite limited,eon nrg limited,ephraim resources limited,eqt holdings limited,equatorial resources limited,equus mining limited,erm power limited,esense-lab ltd,eservglobal limited,esperance minerals limited,esports mogul asia pacific limited,estia health limited,estrella resources limited,etherstack plc,eumundi group limited,eureka group holdings limited,euro manganese inc,europa metals ltd,european cobalt ltd,european lithium limited,european metals holdings limited,euroz limited,evans & partners asia fund,evans & partners australian flagship fund,evans & partners global disruption fund,evans & partners global flagship fund,evans dixon limited,eve investments limited,event hospitality and entertainment ltd,evolution mining limited,evolve education group limited,evz limited,exore resources ltd,experience co limited,explaurum limited,factor therapeutics limited,fairfax media limited,family zone cyber safety limited,far limited,farm pride foods limited,farmaforce limited,faster enterprises ltd,fat prophets global contrarian fund ltd,fat prophets global property fund,fatfish internet group ltd,fbr ltd,fe investments group limited,fe limited,fenix resources ltd,fertoz limited,ffi holdings limited,fiducian group limited,field solutions holdings limited,fin resources limited,finbar group limited,finders resources limited,fintech chain limited,firetrail absolute return limited,first au limited,first cobalt corp.,first graphene limited,first growth funds limited,firstmac mortgage funding trust series 1-2007,firstwave cloud technology limited,fisher & paykel healthcare corporation limited,fitzroy river corporation ltd,flagship investments limited,flamingo ai limited,fleetwood corporation limited,fletcher building limited,flexigroup limited,flexiroam limited,flight centre travel group limited,flinders mines limited,fluence corporation limited,focus minerals ltd,folkestone education trust,folkestone limited,fonterra shareholders' fund,forager australian shares fund,force commodities limited,fortescue metals group ltd,fortune asia group ltd,fraser range metals group ltd,freedom foods group limited,freedom insurance group ltd,freedom oil and gas ltd,freehill mining limited.,freelancer limited,fremont petroleum corporation limited,frontier capital group limited,frontier diamonds ltd,frontier digital ventures limited,frontier resources limited,fsa group limited,funtastic limited,future generation global investment company limited,future generation investment company limited,fyi resources limited,g medical innovations holdings limited,g.u.d. holdings limited,g8 education limited,gage roads brewing co limited,galan lithium limited,galaxy resources limited,gale pacific limited,galena mining limited,galilee energy limited,galileo mining ltd,garda capital group,garda diversified property fund,gas2grid limited,gascoyne resources limited,gateway lifestyle group,gateway mining limited,gazal corporation limited,gbm gold ltd,gbm resources limited,gbst holdings limited,gdi property group,genera biosystems limited,generation development group limited,genesis energy limited,genesis minerals limited,genesis resources limited,genetic signatures limited,genetic technologies limited,genex power limited,gentrack group limited,genworth mortgage insurance australia limited,geoop limited,geopacific resources ltd,getswift limited,gi dynamics,gindalbie metals ltd,gladiator resources limited,glennon small companies limited,glg corp ltd,global construction services limited,global energy ventures limited,global fortune investment limited,global geoscience limited,global health limited,global masters fund limited,global petroleum limited,global value fund limited,globe international limited,globe metals & mining limited,gme resources limited,go energy group limited,goconnect limited,gold mountain limited,gold road resources limited,golden cross resources ltd,golden deeps limited.,golden mile resources ltd,golden rim resources ltd,golden state mining limited,goldfields money limited,goodman group,gooroo ventures limited,gowing bros limited,gps alliance holdings limited,gpt group,gr engineering services limited,graincorp limited,grand gulf energy limited,grandbridge limited,grange resources limited.,graphex mining limited,great boulder resources limited,great southern mining limited,great western exploration limited.,greatcell solar limited,greencross limited,greenland minerals limited,greenpower energy limited,greenvale energy limited,growthpoint properties australia,gryphon capital income trust,gti resources limited,gtn limited,gulf manganese corporation limited,gullewa limited,gwa group limited.,gwr group limited,hammer metals limited,hampton hill mining nl,hannans ltd,hansen technologies limited,haranga resources limited,hardey resources limited,harris technology group limited,harvey norman holdings limited,hastings technology metals ltd,havilah resources limited,hawkley oil and gas limited,hawkstone mining limited,hawthorn resources limited,hazer group limited,healthia limited,healthscope limited.,hearmeout limited,heartland group holdings limited,hearts and minds investments limited,helios energy ltd,helix resources limited,helloworld travel limited,henry morgan limited,heron resources limited,hexagon resources limited,hgl limited,hhy fund,high grade metals limited,high peak royalties limited,highfield resources limited,highlands pacific limited,hill end gold limited,hillgrove resources limited,hills limited,hipo resources limited,hitech group australia limited,holista colltech limited,homeloans limited,horizon gold limited,horizon oil limited,horseshoe metals limited,hot chili limited,hotcopper holdings limited,hotel property investments,hrl holdings ltd,ht&e limited,hub24 limited,hudson investment group limited,hughes drilling limited,huon aquaculture group limited,hutchison telecommunications (australia) limited,hylea metals limited,hyundai capital services,i synergy group limited,iag finance (new zealand) limited,ibosses corporation limited,ibuynew group limited,icandy interactive limited,icar asia limited,icollege limited,icon energy limited,icsglobal limited,identitii limited,idol 2010-1 trust,idol 2011-1 trust,idol 2011-2 trust,idp education limited,idt australia limited,ikegps group limited,ikwezi mining limited,iluka resources limited,image resources nl,imagion biosystems limited,imdex limited,imexhs limited,imf bentham limited,immuron limited,immutep limited,impact minerals limited,impedimed limited,impelus limited,imperial pacific limited,impression healthcare limited,imugene limited,inabox group limited,inca minerals limited,incentiapay limited,incitec pivot limited,indago energy limited,independence group nl,india resources limited,indiana resources limited,indiore ltd,indoor skydive australia group limited,indus energy nl,industria reit,industrial and commercial bank of china limited,infigen energy,infinity lithium corporation limited,infomedia ltd,infratil limited.,ingenia communities group,inghams group limited,insurance australia group limited,integral diagnostics limited,integrated green energy solutions ltd,integrated payment technologies limited,integrated research limited,intellihr holdings limited,intermin resources limited,international cobalt resources limited,international equities corporation limited.,international finance corporation,international goldfields limited...,interstar millennium series 2002-1g trust,interstar millennium series 2003-3g trust,interstar millennium series 2004-1e trust,interstar millennium series 2004-2g trust,interstar millennium series 2004-5 trust,interstar millennium series 2005-2l trust,interstar millennium series 2006-2g trust,interstar millennium series 2006-3l trust,interstar millennium series 2006-4h trust,intiger group limited,intra energy corporation limited,intrepid mines limited,inventis limited,investa office fund,investigator resources ltd,investsmart group limited,invictus energy ltd,invigor group limited,invion limited,invitrocue limited,invocare limited,iodm limited,ioof holdings limited,iot group limited,ipb petroleum limited,ipe limited,iph limited,iq3corp limited,iress limited,iron road limited,ironbark capital limited,ironbark zinc ltd,iselect limited.,isentia group limited,isentric limited.,isignthis ltd,itl health group limited,ive group limited,ixup limited,jack-in group limited,jacka resources limited,jadar lithium limited,james hardie industries plc,jameson resources limited,janison education group limited,janus henderson group plc,japara healthcare limited,jatenergy limited,jayex healthcare limited,jayride group limited,jb hi-fi limited,jc international group limited,jcurve solutions ltd,jervois mining limited,jiajiafu modern agriculture limited,jindalee resources limited,jobstore group ltd.,johns lyng group limited,joyce corporation ltd,jumbo interactive limited,jupiter energy limited,jupiter mines limited.,justkapital limited,jv global limited,k & s corporation limited,k2 asset management holdings ltd,k2 energy limited.,k2fly limited,kaili resources limited,kairiki energy limited,kairos minerals limited,kalamazoo resources limited,kalia limited,kalina power limited,kalium lakes limited,kalnorth gold mines limited,kangaroo island plantation timbers ltd,kangaroo resources limited,karoon gas australia limited,kasbah resources limited,katana capital limited,kathmandu holdings limited,kazakhstan potash corporation limited,kazia therapeutics limited,kelly partners group holdings limited,key petroleum limited,keybridge capital limited,keytone dairy corporation limited,kfw,kgl resources limited,kibaran resources limited,kidman resources limited,kin mining nl,kina petroleum limited,kina securities limited,kinetiko energy ltd,king island scheelite limited,king river copper limited,kingfisher trust 2016-1,kingsgate consolidated limited.,kingsland global ltd,kingsrose mining limited,kingston resources limited,kingwest resources limited,kip mcgrath education centres limited,kirkland lake gold ltd,kleos space s.a,kneomedia limited,knosys limited,kogan.com ltd,kogi iron limited,kollakorn corporation limited,konekt limited,koon holdings limited,kopore metals limited,koppar resources limited,korab resources limited,kore potash plc,korea south-east power co ltd,korvest ltd,krakatoa resources limited,kresta holdings limited,kula gold limited,kyckr limited,l1 long short fund limited,la trobe financial capital markets trust 2018-1,lachlan star limited,lake resources n.l.,lakes oil nl,land & homes group limited,landmark white limited,laneway resources ltd,lanka graphite limited,lantern hotel group,laramide resources ltd,laserbond limited,latam autos limited,latin resources limited,latitude australia credit card loan note trust,latitude australia personal loans series 2017-1 trust,latitude consolidated limited,latrobe magnesium limited,lbt innovations limited,leaf resources ltd,lefroy exploration limited,legacy iron ore limited,legend corporation limited,legend mining limited,leigh creek energy limited,lendlease group,lepidico ltd,liberty funding pty ltd in respect of liberty series 2017-4,liberty funding pty ltd in respect of liberty series 2018-1,lifespot health ltd,lifestyle communities limited,lincoln minerals limited,lindian resources limited,lindsay australia limited,linius technologies limited,link administration holdings limited,lion energy limited,lion one metals limited,lion selection group limited.,lionhub group limited,liontown resources limited,liquefied natural gas limited,lithium australia nl,lithium consolidated mineral exploration limited,lithium power international limited,litigation capital management limited,livehire limited,livetiles limited,living cell technologies limited,lloyds banking group plc,locality planning energy holdings limited,lodestar minerals limited,logicamms limited,london city equities limited,longreach oil limited,longtable group limited,love group global ltd,lovisa holdings limited,lowell resources fund,lucapa diamond company limited,lustrum minerals ltd,lwp technologies limited,lycopodium limited,lynas corporation limited,maca limited,mach7 technologies limited,macmahon holdings limited,macphersons resources limited,macquarie bank limited,macquarie group limited,macquarie media limited,macquarie telecom group limited,magellan financial group limited,magellan global trust,magmatic resources limited,magnetic resources nl,magnetite mines limited.,magnis resources limited.,magnum mining and exploration limited,magontec limited,mainstream group holdings limited,majestic horizon holdings ltd,mako gold limited,malachite resources limited,managed accounts holdings limited,manalto limited,manas resources limited,manhattan corporation limited,marenica energy ltd,mareterram limited,marindi metals limited,mariner corporation limited,marley spoon ag,marmota limited,marquee resources limited,mastermyne group limited,matador mining limited,matrix composites & engineering limited,matsa resources limited,maximus resources limited,maxitrans industries limited,maxsec group limited,mayfield childcare limited,mayne pharma group limited,mayur resources limited,mc mining limited,mcgrath limited,mcmillan shakespeare limited,mcp master income trust,mcpherson's limited,mcs services limited,mec resources limited,medadvisor limited,medallion trust series 2013-2,medallion trust series 2014-1,medallion trust series 2014-1p,medallion trust series 2014-2,medallion trust series 2015-1,medallion trust series 2015-2,medallion trust series 2016-1,medallion trust series 2016-2,medallion trust series 2017-1,medallion trust series 2017-2,medibank private limited,medibio limited,medical developments international limited,medigard limited,medlab clinical limited,medusa mining limited,megaport limited,mejority capital limited,melbana energy limited,memphasys limited.,mercantile investment company ltd,merchant house international limited,mercury nz limited,meridian energy limited,merlin diamonds limited,mesa minerals limited,mesoblast limited,metal bank limited,metalicity limited,metallica minerals limited,metals australia ltd,metals x limited,metalsearch limited,metalstech limited,metcash limited,meteoric resources nl,metgasco ltd,metlifecare limited,metminco limited,metro mining limited,metro performance glass limited,mff capital investments limited,mg unit trust,mgc pharmaceuticals ltd,mgm wireless limited,michael hill international limited,micro-x limited,microequities asset management group limited,middle island resources limited,midway limited,migme limited,millennium limited,millennium minerals limited,millennium services group limited,millinium's alternatives fund.,milton corporation limited,minbos resources limited,mincor resources nl,mindax limited,mineral commodities ltd,mineral resources limited,minotaur exploration ltd,minrex resources limited,mint payments limited,mirrabooka investments limited,mirvac group,mission newenergy limited,mitchell services limited,mithril resources limited,mitula group limited,mma offshore limited,mmg limited,mmj phytotech limited,mnc media investment ltd,mnf group limited,mobecom limited,mobilarm limited,mobilicom limited,mod resources limited,moelis australia limited,moho resources nl,moko social media limited,molopo energy limited,monadelphous group limited,monash absolute investment company limited,monash ivf group limited,monax mining limited,money3 corporation limited,montem resources limited,moreton resources ltd,morphic ethical equities fund limited,mortgage choice limited,motorcycle holdings limited,mount burgess mining nl,mount gibson iron limited,mount ridley mines limited,mrg metals limited,msl solutions limited,msm corporation international ltd,multiplex sites trust,multistack international limited,murchison holdings limited,murray cod australia limited,murray river organics group limited,musgrave minerals limited,mustera property group limited,myanmar metals limited,myer holdings limited,myfiziq limited,myob group limited,mystate limited,mzi resources ltd,n1 holdings limited,nagambie resources limited,namoi cotton limited,nanollose limited,nanosonics limited,nanoveu limited,naos emerging opportunities company limited,naos ex-50 opportunities company limited,naos small cap opportunities company limited,national australia bank limited,national rmbs trust 2011-1 series 2011-1,national rmbs trust 2011-2 series 2011-2,national rmbs trust 2012-2 series 2012-2,national rmbs trust 2015-1 series 2015-1,national rmbs trust 2016-1,national rmbs trust 2018-1 in respect of series 2018-1,national storage reit,national tyre & wheel limited,national veterinary care ltd,navarre minerals limited,navigator global investments limited,navigator resources limited,navitas limited,nb global corporate income trust,nearmap ltd,nelson resources limited.,nemex resources limited,neometals ltd,neptune marine services limited,netccentric limited,netcomm wireless limited,netlinkz limited,netwealth group limited,neuren pharmaceuticals limited,neuroscientific biopharmaceuticals ltd,neurotech international limited,new age exploration limited,new century resources limited,new energy minerals ltd,new energy solar,new hope corporation limited,new standard energy limited,new talisman gold mines limited,new world cobalt limited,new zealand king salmon investments limited,newcrest mining limited,newfield resources limited,news corporation..,nex metals exploration limited,nextdc limited,nexus minerals limited,nge capital limited,nib holdings limited,nicheliving holdings ltd,nick scali limited,nickel mines limited,nickelore limited,nine entertainment co. holdings limited,niuminco group limited,nkwe platinum limited,noble metals limited,noni b limited,nordic investment bank,northern cobalt limited,northern minerals limited,northern mining limited,northern star resources ltd,norwest energy nl,norwest minerals limited,norwood systems limited,nova minerals limited,novatti group limited,novita healthcare limited,novonix limited,noxopharm limited,nrw holdings limited,nsx limited,ntm gold limited,nucoal resources limited,nuenergy gas limited,nufarm finance (nz) limited,nufarm limited,nuheara limited,nusantara resources limited,nvoi ltd,nzme limited,nzuri copper limited,oakajee corporation limited,oakdale resources limited,obj limited,objective corporation limited,ocean grown abalone limited,oceanagold corporation,oceania capital partners limited,oceania healthcare limited,octanex limited,odin energy limited,odin metals limited,odyssey energy limited,ofx group limited,oil search limited,oilex ltd,okapi resources limited,oklo resources limited,oldfields holdings limited,oliver's real food limited,om holdings limited,oncosil medical ltd,oneall international limited,onemarket limited,oneview healthcare plc,onevue holdings limited,onterran limited,ooh!media limited,ookami limited,opendna limited,opthea limited,optiscan imaging limited,orbital corporation limited,orcoda limited,ordinary (unlisted/listed - cosacs),orecorp limited,orica limited,origin energy limited,orinoco gold limited,orion equities limited,orion health group limited,orion metals limited,orion minerals ltd,orminex ltd,oro verde limited,orocobre limited,orora limited,orthocell limited,osprey medical inc,otherlevels holdings limited,otto energy limited,oventus medical limited,over the wire holdings limited,oz minerals limited,ozgrowth limited,p2p transport limited,pacific american coal limited,pacific bauxite limited,pacific current group limited,pacific dairies limited,pacific energy limited,pacific smiles group limited,pacific star network limited,pacifico minerals limited,pact group holdings ltd,painchek ltd,paladin energy ltd,pan asia corporation limited,pancontinental oil & gas nl,panorama synergy ltd,panoramic resources limited,panterra gold limited,pantoro limited,papyrus australia limited,paradigm biopharmaceuticals limited..,paragon care limited,parazero limited,paringa resources limited,parkd ltd,parkway minerals nl,patrys limited,paygroup limited,peak resources limited,peako limited,pearl global limited,peel mining limited,peet limited,pegasus metals limited,pelican resources limited,pendal group limited,pengana capital group limited,pengana international equities limited,peninsula energy limited,peninsula mines limited,pensana metals ltd,pental limited,people infrastructure ltd,pepinnini lithium limited,pepper i-prime 2017-3 trust,pepper residential securities trust no. 20,peppermint innovation limited,perpetual equity investment company limited,perpetual limited,perpetual resources limited,perseus mining limited,petratherm ltd,petrel energy limited,petsec energy limited,pharmaust limited,pharmaxis ltd,phileo australia limited,phoslock environmental technologies limited,phosphagenics limited,phylogica limited,piedmont lithium ltd,pilbara minerals limited,pilot energy limited,pinchme.com inc.,pinnacle investment management group limited,pioneer credit limited,pioneer resources limited,pivotal systems corporation,places for people treasury plc,planet gas limited,platina resources limited,platinum asia investments limited,platinum asset management limited,platinum capital limited,plato income maximiser limited.,plc financial solutions limited,plukka limited,plus connect limited,pm capital asian opportunities fund limited,pm capital global opportunities fund limited,pmp limited,pnx metals limited,po valley energy limited,podium minerals limited,pointerra limited,polarx limited,polynovo limited,poseidon nickel limited,powerhouse ventures limited,poz minerals limited,ppk group limited,praemium limited,prairie mining limited,prana biotechnology limited,predictive discovery limited,premier investments limited,prescient therapeutics limited,primary health care limited,prime financial group limited,prime media group limited,primero group limited,pro medicus limited,pro-pac packaging limited,probiotec limited,prodigy gold nl,progress 2010-1 trust,progress 2017-2 trust,progress 2018-1 trust,propel funeral partners limited,property connect holdings limited,propertylink group,prophecy international holdings limited,prospect resources limited,protean energy limited,proteomics international laboratories ltd,ps&c limited,psc insurance group limited,ptb group limited,puma masterfund p-16,puma series 2013-1,puma series 2014-1,puma series 2014-2,puma series 2014-4p,puma series 2015-1,puma series 2015-3,puma series 2017-1,pura vida energy nl,pure minerals limited,pureprofile ltd,purifloh limited,pursuit minerals ltd,pushpay holdings limited,pwr holdings limited,pyrolyx ag,q technology group limited,qantas airways limited,qantm intellectual property limited,qbe insurance group limited,qem limited,qms media limited,qnb finance ltd,quantify technology holdings limited,quantum energy limited.,quantum graphite limited,qube holdings limited,quebec,queensland bauxite limited,queensland treasury corporation,quest investments limited,queste communications limited,questus limited,quickstep holdings limited,quintis ltd,qv equities limited,r3d global limited,race oncology ltd,rafaella resources ltd.,raffles capital limited,raiden resources limited,raiz invest limited,ramelius resources limited,rams mortgage securities trust series 2006-1,ramsay health care limited,rand mining limited,range international limited,range resources limited,raptis group limited,raptor resources limited,raven energy limited,rawson oil and gas ltd,rbr group limited,rcr tomlinson limited,rea group ltd,readcloud limited,real energy corporation limited,real estate investar group limited,realm resources limited,recce pharmaceuticals ltd,reckon limited,rectifier technologies ltd,red 5 limited,red emperor resources nl,red hill iron limited,red metal limited,red mountain mining limited,red river resources limited,red sky energy limited.,redbank copper limited,redbubble limited,redflex holdings limited,redflow limited,redhill education limited,redstone resources limited,reece limited,reedy lagoon corporation limited,reef casino trust,reffind limited,refresh group limited,regeneus ltd,regional express holdings limited,regis healthcare limited,regis resources limited,registry direct limited,reliance worldwide corporation limited,renascor resources limited,renegade exploration limited,rent.com.au limited,renu energy limited,resapp health limited,resimac bastille trust series 2017-1nc,resimac triomphe trust premier 2017-2,resimac triomphe trust,resimac premier series 2018-1,resmed inc,resolute mining limited,resonance health limited,resource base limited,resource development group limited,resource generation limited,resource mining corporation limited,resources & energy group limited,respiri limited,restaurant brands new zealand limited,retail food group limited,retech technology co.,limited,reva medical,reverse corp limited,reward minerals ltd,rewardle holdings limited,rex minerals limited,rey resources limited,rhinomed limited,rhipe limited,rhythm biosciences limited,ridley corporation limited,riedel resources limited,rightcrowd limited,rimfire pacific mining nl,rio tinto limited,rision limited,riversgold limited,rma energy limited,rma global limited,rmg limited,rny property trust,robo 3d limited,rolek resources ltd,rongyu pharmaceuticals limited,roots sustainable agricultural technologies ltd,roto-gro international limited,rox resources limited,royalco resources limited,rpmglobal holdings limited,rtg mining inc.,rubicor group limited,rumble resources limited,rural funds group,ruralco holdings limited,rxp services limited,ryder capital limited,s2 resources ltd,sabre resources limited,sacgasco limited,saferoads holdings limited,sagalio energy limited,salmat limited,salt lake potash limited,samson oil & gas limited,sandfire resources nl,sandon capital investments limited,santa fe minerals ltd,santana minerals limited,santos finance limited,santos limited,saracen mineral holdings limited,saturn metals limited,saunders international limited,sayona mining limited,scentre group,scentre group trust 1,scentre group trust 1 and scentre group trust 2,schaffer corporation limited,schrole group ltd,scidev ltd,scottish pacific group limited,scout security limited,sdi limited,seafarms group limited,sealink travel group limited,secos group ltd,secure2go group limited,securitised australian mortgage trust 2011-1,security matters limited,seek limited,select harvests limited,selfwealth limited,senetas corporation limited,senex energy limited,sensen networks limited,sensera limited,sequoia financial group ltd,series 2009-1 wst trust,series 2010-1 reds trust,series 2010-2 reds trust,series 2011-1 wst trust,series 2011-2 wst trust,series 2011-3 wst trust,series 2012-1 wst trust,series 2012-1e reds trust,series 2013-1 harvey trust,series 2013-1 wst trust,series 2013-2 wst trust,series 2014-1 wst trust,series 2014-2 wst trust,series 2015-1 wst trust,series 2017-1 reds trust,series 2018-1 reds trust,serko limited,serpentine technologies limited,servcorp limited,service stream limited,servtech global holdings ltd,seven group holdings limited,seven west media limited,sg fleet group limited,shareroot ltd,shaver shop group limited,sheffield resources limited,shekel brainweigh ltd,shenhua international limited,shine corporate ltd,shine metals limited,shinhan bank.,shopping centres australasia property group,shree minerals limited,shriro holdings limited,siburan resources limited,sienna cancer diagnostics limited,sietel limited,sigma healthcare limited,sihayo gold limited,silex systems limited,silver chef limited,silver city minerals limited,silver heritage group limited,silver lake resources limited,silver mines limited,simavita limited,simble solutions limited,simonds group limited,sims metal management limited,sinetech limited,sinovus mining limited,sipa resources limited,site group international limited,siv asset management limited,six sigma metals limited,skin elements limited,sky and space global ltd,sky network television limited.,skycity entertainment group limited,skyfii ltd,skyland petroleum  group limited,slater & gordon limited,smart abs series 2014-4 trust,smart abs series 2015-2 trust,smart abs series 2015-4e trust,smart abs series 2016-1 trust,smart abs series 2016-3 trust,smart abs series 2017-1 trust,smart abs series 2017-2 trust,smart marine systems limited,smart parking limited,smartgroup corporation ltd,smartpay holdings limited,smiles inclusive limited,somnomed limited,sonic healthcare limited,soon mining limited,south american iron & steel corporation limited,south pacific resources limited,south32 limited,southern cross electrical engineering ltd,southern cross exploration n.l.,southern cross media group limited,southern gold limited,southern hemisphere mining limited,sovereign metals limited,spark infrastructure group,spark new zealand limited,spdr s&p/asx 200 fund,spdr s&p/asx 200 listed property fund,spdr s&p/asx 50 fund,speciality metals international limited,specialty fashion group limited,spectrum metals limited,spectur limited,speedcast international limited,spheria emerging companies limited,spicers limited,spirit telecom limited,spitfire materials ltd,spookfish limited,sportshero limited,spotless group holdings limited,spring fg limited,sprintex limited,st barbara limited,st george mining limited,stanmore coal limited,star combo pharma limited,stargroup limited,starpharma holdings limited,state gas limited,stavely minerals limited,steadfast group limited,stealth global holdings ltd,steamships trading company limited,stellar resources limited,stemcell united limited,sterling plantations limited,stockland,stone resources australia limited,stonewall resources limited,story-i limited,straker translations limited,strandline resources limited,strata-x energy limited,strategic elements limited,strategic energy resources limited,strategic minerals corporation nl,stream group limited,strike energy limited,strike resources limited,structural monitoring systems plc,success global media limited,suda pharmaceuticals ltd,sugar dragon limited,sultan resources ltd,sumatra copper & gold plc,summerset group holdings limited,summit resources limited,sun resources nl,sunbridge group limited,suncorp group limited,suncorp-metway limited .,sundance energy australia limited,sundance resources limited,sunland group limited,sunstone metals ltd,sunvest corporation limited,super retail group limited,superior lake resources limited,superior resources limited,superloop limited,supply network limited,surefire resources nl,surfstitch group limited,swick mining services ltd,swift networks group limited,sydney airport,symbol mining limited,syndicated metals limited,synertec corporation limited,syngas limited,synlait milk limited,syntonic limited,syrah resources limited,tabcorp holdings limited,tag pacific limited,talga resources ltd,talisman mining limited,talon petroleum limited,tamaska oil and gas ltd,tamawood limited,tambla limited,tanami gold nl,tando resources limited,tanga resources limited,tao commodities ltd,tap oil limited,target energy limited,taruga minerals limited,tasfoods limited,tasman resources ltd,tassal group limited,tatts group limited,tawana resources nl,tbg diagnostics limited,tech mpire limited,techniche limited.,technology metals australia limited,technology one limited,tegel group holdings limited,telix pharmaceuticals limited,telstra corporation limited.,temple & webster group ltd,templeton global growth fund limited,tempo australia ltd,tempus resources ltd,terracom limited,terrain minerals limited,terramin australia limited.,tesserent limited,test security,the a2 milk company limited,the agency group australia ltd,the betmakers holdings ltd,the citadel group limited,the data exchange network limited,the food revolution group limited,the go2 people ltd,the hydroponics company limited,the pas group limited,the reject shop limited,the star entertainment group limited,think childcare limited,thomson resources limited,thor mining plc,thorn group limited,thorney opportunities ltd,thorney technologies ltd,threat protect australia limited,thred limited,thundelarra limited,tian an australia limited,tian poh resources limited,tianmei beverage group corporation limited,tietto minerals limited,tiger resources limited,tigers realm coal limited,tikforce limited,tilt renewables limited.,timah resources limited,tinybeans group ltd,titan minerals limited,titanium sands limited,titomic limited,tlou energy limited,tng limited,tnt mines limited,todd river resources limited,tomizone limited,toptung ltd,torian resources limited,toro energy limited,torrens series 2010-2 trust,torrens series 2010-3 trust,torrens series 2013-1 trust,torrens series 2013-2 trust,torrens series 2014-1 trust,torrens series 2014-2 trust,torrens series 2015-1 trust,torrens series 2016-1 trust,total face group limited,tower limited,tpc consolidated limited,tpg telecom limited,tpi enterprises limited,trade me group limited,traditional therapy clinics limited,traffic technologies ltd.,traka resources limited,transaction solutions international limited,transcendence technologies limited,transmetro corporation limited,transurban group,treasury corporation of victoria,treasury wine estates limited,trek metals limited,triangle energy (global) limited,tribeca global natural resources limited,tribune resources limited,trigg mining ltd,trimantium growthops limited,triple energy limited,triton minerals ltd,triton trust no.7 in respect of the bond series 2017-2,troy resources limited,truscott mining corporation limited,trustees australia limited,tta holdings limited,tungsten mining nl,turners automotive group limited,tv2u international limited,twenty seven co. limited,tychean resources ltd,tyranna resources limited,tz limited,ucw limited,uil energy ltd,ultima united limited,ultracharge limited,unibail-rodamco-westfield,united networks limited,united overseas australia limited,universal biosensors inc.,universal coal plc,urb investments limited,urbanise.com limited,us masters residential property fund,us residential fund,uscom limited,uuv aquabotix ltd,valmec limited,valor resources limited,vango mining limited,variscan mines limited,vault intelligence limited,vdm group limited,vealls limited,vector resources limited,vectus biosystems limited,veem ltd,velocity property group limited,ventnor resources ltd,venture minerals limited,venturex resources limited,venus metals corporation limited,verdant minerals ltd,veriluma limited,veris limited,vgi partners global investments limited,viagold capital limited,vicinity centres,vicinity centres trust,victor group holdings limited,victory mines limited,vietnam industrial investments limited,viking mines limited,villa world limited.,village roadshow limited,vimy resources limited,vintage energy ltd,virgin australia holdings limited,virtus health limited,visioneering technologies,vista group international limited.,vita group limited,vita life sciences limited..,vital metals limited,vitalharvest freehold trust,viva energy group limited,viva energy reit,vivid technology limited,vmoto limited,vocus group limited,vodafone group plc.,volpara health technologies limited,volt power group limited,volt resources limited,voltage ip limited,vonex limited..,vpcl ltd,vysarn limited,wagners holding company limited,walkabout resources ltd,wam active limited,wam capital limited,wam global limited,wam leaders limited,wam microcap limited,wam research limited,wangle technologies limited,washington h soul pattinson & company limited,waterco limited,watermark global leaders fund limited,watermark market neutral fund limited,watpac limited,wattle health australia limited,wcm global growth limited,wea finance llc,wea finance llc and westfield uk & europe finance plc,wealth defender equities limited,webjet limited,webster limited,weebit nano ltd,wellard limited,wellcom group limited,wesfarmers limited,west african resources limited,west wits mining limited,western areas limited,westgold resources limited.,westoz investment company limited,westpac banking corporation,weststar industrial limited,wfd trust,white cliff minerals limited,white energy company limited,white rock minerals limited,whitebark energy ltd,whitefield limited,whitehaven coal limited,whitehawk limited,wide open agriculture ltd,winchester energy ltd,windlab limited,wingara ag ltd,winmar resources limited,wisetech global limited,wiseway group limited,wisr limited,wolf minerals limited,wolf petroleum ltd,wollongong coal limited,wonhe multimedia commerce ltd,woodside petroleum limited,woolworths group limited,woomera mining limited,world reach limited,world.net services limited,worleyparsons limited,wpg resources ltd,wpp aunz ltd,xanadu mines ltd,xenith ip group limited,xero limited,xpd soccer gear group limited,xped limited,xref limited,xrf scientific limited,xs resources limited,xstate resources limited,xtd ltd,xtek limited.,xtv networks ltd,yancoal australia limited,yellow brick road holdings limited,yojee limited,yowie group ltd,ypb group ltd,z energy limited.,zamanco minerals limited,zelda therapeutics limited,zenitas healthcare limited,zenith energy limited,zenith minerals limited,zeta petroleum plc,zeta resources limited,zeus resources limited,zicom group limited,zimplats holdings limited,zinc of ireland nl,zip co limited.,ziptel limited,zoono group limited,zyber holdings ltd",
+      "activated": true
+    },
+    {
+      "name": "ASX Stock Codes",
+      "mode": true,
+      "words": "moq,ont,14d,1st,t3d,tgp,tot,tdo,ddd,3gc,3pl,4ds,5gn,88e,8co,8ih,8ec,8vi,9sp,nnw,acb,ari,ayi,abp,abl,aeg,abt,ajc,akg,ax8,ax1,acs,acq,acf,acr,acw,aiv,ada,adh,1ad,add,aau,abc,adr,ahz,ady,adt,adj,ano,abv,asw,adx,aer,aml,aei,ais,aeb,afr,aft,afp,apt,agl,agj,amn,agr,ahl,a1c,apw,agi,aiz,axp,ajl,aqg,auq,acl,aly,alc,al8,arn,lep,ajx,aqi,aqx,alk,ahq,amt,aqz,ags,age,ayr,alq,ars,azi,atc,aiq,1ag,agh,alu,ame,ajm,awc,ama,anl,ays,amo,amb,amh,amc,abr,aow,amp,atx,anq,alt,anr,ahr,adn,atm,as1,aqm,aar,agg,ab1,awv,ann,asn,att,ado,avd,azy,apl,anp,ape,apa,ahx,apo,apd,aop,aon,aoj,aor,aol,ao2,ao3,atl,apx,atz,ad1,aqh,aqs,aru,arb,arx,axe,ar9,arl,aad,adv,arf,ard,axt,ali,arg,are,agy,ara,all,ahk,ajq,awn,arq,amd,arv,aaj,ahy,ajy,afa,ash,ajd,ajj,atb,am3,apz,asp,akm,asy,ao1,air,aro,atr,asx,ata,ahn,alx,ago,atp,atu,aub,aia,avc,acp,ad8,akp,akn,au8,aee,ami,aur,azj,aou,abw,aib,a3d,arm,aup,aqj,anw,ac8,asl,auc,amg,aoa,anv,ast,aqd,asb,aul,auh,aok,ang,apg,agd,anz,aym,aac,aap,abx,aco,xcl,ahf,ayf,aef,afg,afi,agm,alf,ayk,ayz,auz,aqc,api,apc,arc,aui,ayu,aof,avl,avg,awy,ats,ans,aba,aiy,ahg,asg,ava,aev,avn,aog,avw,avh,avj,avz,avq,axi,axs,axl,ayg,azm,azv,azs,bbn,bpp,bti,boq,bmn,bap,bkp,bd1,bar,bst,bse,bsm,bas,bsr,brl,bat,bmh,bau,bbx,bci,bpt,blx,bcn,bdr,bga,bfg,bal,bgl,ben,blt,bhd,bel,bky,bmt,bfc,byi,bhp,bid,bri,bnl,bth,bin,bgt,bbm,bno,bit,bxn,bir,bgs,bis,bsn,bki,bkm,bc8,bdg,bkt,bsp,bem,blk,bkl,bsx,bwf,bwr,blz,bgh,bdi,bul,bla,baf,bct,bsl,blg,bmg,boa,bly,bda,bah,bol,bbr,bld,boe,bot,boc,b2y,buy,bcb,bhl,bpb,bph,brc,brn,bxb,bvs,brb,brg,bkw,bbl,bgp,bck,bpl,bgr,bee,brk,byh,bsa,btc,bub,bud,bug,biq,bnr,bcl,bru,bux,bmp,bwp,bwx,bye,bpg,cab,cdm,cad,dxa,cai,ce1,cxl,ctx,can,cae,cp1,cay,cfe,cag,czz,cmy,caj,caa,crs,cmm,caq,cvv,cwx,crb,cnx,crm,cg1,cdx,cdv,cdd,cdp,cin,cvn,cav,cce,cap,car,ccv,czi,cmd,ccz,cdt,cyl,cat,cxu,caz,cbc,cbl,ct1,cwp,cnl,cdy,clt,cla,cr3,ctm,ctl,ctp,caf,cxm,cni,cip,cma,cya,cvs,cfo,chn,cel,cgf,chj,chu,chr,cia,cca,cwl,chp,chc,clw,cqr,chz,ccb,cmc,ctc,cdh,cnu,cii,cim,cro,cnw,cto,cvl,cly,cnd,cl1,clz,css,clq,cwy,cvw,cpv,cdg,cam,ciw,cuv,clv,cmi,cgr,ca8,cob,ccl,coh,cda,cgs,chk,cka,cl8,clh,cll,ckf,crl,coi,cba,ccg,cff,cmp,cpu,clf,cnj,cio,cxz,cog,csd,czl,cr1,cen,cga,cie,cvf,crr,cm1,coe,c6c,cse,coy,czn,cd1,cd2,cd3,cxo,ciz,crn,ctd,coo,cgc,cgm,cup,ccj,cvt,cyg,cow,czr,cgo,cxx,cgn,crd,ccp,ci1,cph,cmw,cli,cux,cm8,csk,cwn,cuh,cu1,cu2,cas,cte,csv,csl,csr,clx,cdu,cue,cul,cv1,cvc,cyb,cyq,cyc,cy5,cyp,dcn,dau,dnk,dhr,dtm,dtl,ddt,dtr,dav,dw8,deg,dem,dsx,dcg,dyl,dlc,d13,dgh,dev,dvn,dxs,dgo,dgr,drx,ddr,dcc,dxb,daf,dui,djw,dcl,dhg,dme,dmp,dna,dfm,drm,dor,dvl,dtz,dow,dgf,dra,dmg,dts,drk,dn8,da1,daz,dam,dae,daq,dro,dse,dti,dub,dkm,dlx,dbf,d2o,dws,dma,e2m,ehh,em2,eer,egs,efe,eas,ebo,ecg,ear,epm,ecx,ede,ega,ehx,edc,enn,erf,eld,eos,e25,elt,exl,exr,elk,eai,egi,elx,elo,els,emb,ehl,emr,em1,emi,eml,erm,emp,eeg,ego,erl,epd,emu,enr,enb,enx,eax,eme,eol,era,egy,ewc,egg,ene,en1,egn,eor,exo,e88,ena,ete,ent,evm,ect,egl,evs,e2e,epa,eqt,eqx,eqe,epw,ese,esv,esm,esh,ehe,esr,esk,ebg,egh,emn,euz,euc,eur,emh,ezl,eaf,eff,egd,egf,ed1,eve,evt,evn,evo,evz,erx,exp,exu,ftt,fxj,fzo,far,frm,ffc,fe8,fpc,fpp,ffg,fbr,fei,fel,fex,ftz,ffi,fid,fsg,fin,fri,fnd,ftc,fta,fau,fcc,fgr,fgf,fma,fct,fph,fzr,fsi,fgo,fwd,fbu,fxl,frx,flt,fms,flc,fml,fet,flk,fsf,for,4ce,fmg,fya,frn,fnp,fig,fdm,fhs,fln,fpl,fcg,fdx,fdv,fnt,fsa,fun,fgg,fgx,fyi,gmv,gud,gem,grb,gln,gxy,gap,g1a,gll,gal,gcm,gdf,ggx,gcy,gty,gml,gzl,gbm,gbz,gbt,gdi,gbi,gdg,gne,gmd,ges,gss,gtg,gnx,gtk,gma,geo,gpr,gsw,gid,gbg,gla,gc1,gle,gcs,gev,gfi,gsc,glh,gfl,gbp,gvf,glb,gbe,gme,goe,gcn,gmn,gor,gcr,ged,g88,gmr,gsm,gmy,gmg,goo,gow,gps,gpt,gng,gnc,gge,gba,grr,gpx,gbr,gsn,gte,gsl,gxl,ggg,gpp,grv,goz,gci,gtr,gtn,gmc,gul,gwa,gwr,hmx,hhm,hnr,hsn,har,hdy,ht8,hvn,has,hav,hog,hwk,haw,hzr,hla,hso,hmo,hgh,hm1,he8,hlx,hlo,hml,hrr,hxg,hng,hhy,hgm,hpr,hfr,hig,heg,hgo,hil,hip,hit,hct,hom,hrn,hzn,hor,hch,hot,hpi,hrl,ht1,hub,hgl,hdx,huo,hta,hco,hcs,is3,ian,ib8,ibn,ici,icq,ict,icn,ics,id8,idf,idh,idj,iel,idt,ike,ikw,ilu,ima,ibx,imd,ime,imf,imc,imm,ipt,ipd,ims,ipc,ihl,imu,iab,icg,inp,ipl,ink,igo,irl,ida,ior,idz,ind,idr,icb,ifn,inf,ifm,ift,ina,ing,iag,idx,ige,ip1,iri,ihr,irc,icr,ieq,ifx,igs,img,imx,imq,imk,imn,imo,inb,inn,inh,iam,iec,iau,ivt,iof,ivr,inv,ivz,ivo,ivx,ivq,ivc,iod,ifl,iot,ipb,ipe,iph,iq3,ire,ird,ibc,ibg,isu,isd,icu,isx,itd,igl,ixu,jip,jka,jdr,jhx,jal,jan,jhg,jhc,jat,jhl,jay,jbh,jci,jcs,jrv,jjf,jrl,job,jlg,jyc,jin,jpr,jms,jkl,jvg,ksc,kam,kte,k2f,klr,kik,kai,kzr,klh,kpo,kll,kgm,kpt,krl,kar,kas,kat,kmd,kpc,kza,kpg,key,kbc,ktd,kfw,kgl,knl,kdr,kin,kpl,ksl,kko,kis,krc,kig,kcn,klo,krm,ksn,kwr,kme,kla,kss,knm,kno,kgn,kfe,kkl,kkt,knh,kmt,krx,kor,kp2,kop,kov,kta,krs,kgd,kyk,lsf,ltf,lsa,lke,lko,lhm,lmw,lny,lgr,ltn,lam,lbl,laa,lrs,lcn,lc1,lcd,lmg,lbt,ler,lex,lcy,lgd,leg,lck,llc,lpd,li1,li2,lsh,lic,lml,lin,lau,lnu,lnk,lio,llo,lsx,lhb,ltr,lng,lit,li3,lpi,lca,lvh,lvt,lct,lo1,lpe,lsr,lcm,lce,lgo,lon,lve,lov,lrt,lom,lrm,lwp,lyl,lyc,mld,m7t,mah,mrp,mbl,mqg,mrn,maq,mfg,mgg,mag,mau,mgt,mns,mgu,mgl,mai,mhh,mkg,mar,mgp,mtl,msr,mhc,mey,mtm,mzn,mcx,mmm,meu,mqr,mye,mzz,mce,mat,mxr,mxi,msp,mfd,myx,mrl,mcm,mea,mms,mxt,mcp,msg,mmr,mdr,mbj,mdz,mpz,mzb,mza,mzc,mzf,mzt,mz1,mz2,mpl,meb,mvp,mgz,mdc,mml,mp1,mjc,may,mem,mvt,mhi,mcy,mez,med,mas,msb,mbk,mct,mlm,mls,mlx,mse,mtc,mts,mei,mel,meq,mnc,mmi,mpp,mff,mgc,mxc,mwr,mhj,mx1,mam,mdi,mwy,mig,mhd,moy,mil,max,mlt,mnb,mcr,mdx,mrc,min,mep,mrr,mnw,mir,mgr,mbt,msv,mth,mua,mrm,mmg,mmj,mih,mnf,mbm,mbo,mob,mod,moe,moh,mkb,mpo,mnd,ma1,mvf,mox,mny,mr1,mrv,mec,moc,mto,mtb,mgx,mrd,mrq,mpw,msm,mxu,msi,mch,mca,mrg,mgv,mpx,myl,myr,myq,myo,mys,mzi,n1h,nag,nam,nc6,nan,nvu,ncc,nac,nsc,nab,naf,nao,nah,naj,nrm,nro,nsr,ntd,nvl,nml,ngi,nav,nvt,nbi,nea,nes,nxr,nmt,nms,ncl,ntc,net,nwl,neu,nsb,nti,nae,ncz,nxe,new,nhc,nse,ntl,nwc,nzk,ncm,nwf,nws,nme,nxt,nxm,nge,nhf,nlh,nck,nic,nio,nec,niu,nkp,nmm,nbl,nib,n27,ntu,nmi,nst,nwe,nwm,nor,nva,nov,nhl,nvx,nox,nwh,nsx,ntm,ncr,ngy,nfn,nuf,nuh,nus,nvo,nzm,nzc,okj,oar,obj,ocl,oga,ogc,ocp,oca,oxx,odn,odm,ody,ofx,osh,oex,okr,oku,olh,oli,omh,osl,1al,omn,one,ovh,otr,oml,ook,opn,opt,oil,oec,oda,zor,orr,ori,org,ogx,oeq,ohe,orm,orn,onx,ovl,ore,ora,occ,osp,olv,oel,ovn,otw,ozl,ozg,p2p,pak,pbx,pac,pdf,pea,psq,pnw,pmy,pgh,pck,pdn,pzc,pcl,psy,pan,pgi,pnr,ppy,par,pgc,prz,pnl,pkd,pwn,pab,pyg,pek,pko,pg1,pex,ppc,pun,pel,pdl,pcg,pia,pen,psm,pm8,ptl,ppe,pnn,pep,per,pil,pic,ppt,pec,pru,ptr,prl,psa,paa,pxs,phi,pet,poh,pyc,pll,pls,pgy,pin,pni,pnc,pio,pvs,ppz,pgs,pgm,pai,ptm,pmc,pl8,plc,pka,pc1,paf,pgf,pmp,pnx,pve,pod,3dp,pxx,pnv,pos,pvl,poz,ppk,pps,pdz,pbt,pdi,pmv,ptx,pry,pfg,prt,pgx,pme,ppg,pbp,prx,pob,pot,pov,pfp,pch,plg,pro,psc,pow,piq,psz,psi,ptb,pub,puj,puk,puo,puq,puu,puv,puz,pvd,pm1,ppl,po3,pur,pph,pwh,plx,qtg,qan,qip,qbe,qem,qms,qnb,qfy,qtm,qgl,qub,qbc,qbl,xql,qst,que,qss,qhl,qin,qve,r3d,rac,rfr,raf,rdn,rzi,rms,rmm,rhc,rnd,ran,rrs,rpg,rpl,rel,raw,rbr,rcr,rea,rcl,rle,rev,rrp,rce,rkn,rft,red,rmp,rhi,rdm,rmx,rvr,rog,rcp,rbl,rdf,rfx,rdh,rds,reh,rlc,rct,rfn,rgp,rgs,rex,reg,rrl,rd1,rwc,rnu,rnx,rnt,rne,rap,rt9,rtc,rt1,rmd,rsg,rht,rbx,rdg,res,rmi,rez,rsh,rbd,rfg,rte,rva,ref,rwd,rxh,rxm,rey,rno,rhp,rhy,ric,rie,rcw,rim,rio,rnl,rgl,rmt,rmy,rmg,rny,rbo,rlk,ry8,roo,rgi,rxl,rco,rul,rtg,rub,rtr,rff,rhl,rxp,ryd,s2r,sbr,sgc,srh,san,slm,so4,ssn,sfr,snc,sfm,smi,sfv,sto,sar,stn,snd,sya,scg,scw,sca,sfc,scl,sdv,sco,sct,sdi,sfg,slk,ses,s2g,sac,smx,sek,shv,swf,sen,sxy,sns,se1,seq,wsc,rek,rda,wsh,wsj,wsn,wso,rfb,htb,wsq,wsd,wsz,wek,wej,rfc,rfe,sko,s3r,srv,ssm,svt,svw,swm,sgf,sro,ssg,sfx,sbw,shu,shj,shi,shz,scp,shh,shm,sbu,sdx,ssl,sig,sih,slx,siv,sci,svh,slr,svl,sva,sis,sio,sgm,stc,snv,sri,sit,sam,si6,skn,sas,skt,skc,skf,skp,sgh,sse,smt,sxb,ss6,saz,ssf,ss7,sm8,spz,siq,smp,sil,som,shl,smg,say,spb,s32,sxe,sxx,sxl,sau,suh,svm,ski,spk,stw,slf,sfy,sei,sfh,spx,sp3,sda,sec,srs,st1,spi,sfi,sho,spo,sfl,six,sbm,sgq,smr,s66,stl,spl,gas,svy,sdf,sgi,sst,srz,scu,sbi,sgp,shk,swj,sry,stg,sta,sxa,sor,ser,smc,sgo,stx,srk,smn,sgu,sud,sdc,slz,sum,snz,smm,sur,sbb,sun,sbk,sea,sdl,sdg,stm,svs,sul,sup,spq,slc,snl,srn,srf,swk,sw1,syd,sl1,smd,sop,sys,sm1,syt,syr,tah,tag,tlg,tlm,tpd,tmk,twd,tbl,tam,tno,trl,tao,tap,tex,tar,tfl,tas,tgr,tts,taw,tdl,tmp,tcn,tmt,tne,tgh,tlx,tls,tpw,tgg,tpp,tmr,ter,tmx,tzn,tnt,tes,a2m,au1,tbh,cgl,dxn,fod,go2,thc,pgr,trs,sgr,tnk,tmz,thr,tga,top,tek,tps,thd,thx,tia,tpo,tb8,tie,tgs,tig,tkf,tlt,tml,tny,ttm,tsl,ttt,tou,tng,tin,trt,tom,ttw,tnr,toe,trk,toa,tnb,tnf,tnh,toz,tnj,ttz,tfg,twr,tpc,tpm,tpe,tme,ttc,tti,tkl,tsn,ttl,tco,tcl,xvg,twe,tkm,teg,tgf,tbr,tmg,tgo,tnp,ton,tt7,try,trm,tau,tta,tgn,tra,tv2,tsc,tyk,tyx,tzl,ucw,uil,uul,utr,urw,unl,uos,ubi,unv,urb,ubn,urf,usr,ucm,uuv,vmx,val,van,var,vlt,vmg,vel,vec,vbs,vee,vp7,vrx,vms,vxr,vmc,vrm,vri,vrs,vg1,via,vcx,vcd,vig,vic,vii,vka,vlw,vrl,vmy,ven,vah,vrt,vti,vgl,vtg,vls,vml,vth,vea,vvr,viv,vmt,voc,vpg,vht,vpr,vrc,vip,vn8,vpc,vys,wgn,wkt,waa,wam,wgb,wle,wmi,wax,wgl,sol,wat,wgf,wmk,wtp,wha,wqg,weh,wef,wde,web,wba,wbt,wld,wll,wes,waf,wwi,wsa,wgx,wic,wbc,wsi,wfb,wcn,wec,wrm,wbe,whf,whc,whk,woa,wel,wnd,wnr,wfe,wtc,wwg,wzr,wlf,wof,wlc,wmc,wpl,wow,wml,wrr,wns,wor,wpg,wpp,xam,xip,xro,xpd,xpe,xf1,xrf,xs1,xst,xtd,xte,xtv,yal,ybr,yoj,yow,ypb,zel,zam,zld,znt,zen,znc,zta,zer,zeu,zgl,zim,zmi,z1p,zip,zno,zyb",
+      "activated": true
+    }
+  ],
   "regex_features": [],
-  "patterns": [],
+  "patterns": [
+    {
+      "pattern": "any [company_item] on [stock_code]",
+      "intent": "News"
+    },
+    {
+      "pattern": "is there any [company_item] on [company]",
+      "intent": "News"
+    },
+    {
+      "pattern": "is there any [company_item] on [stock_code]",
+      "intent": "News"
+    },
+    {
+      "pattern": "any news on [stock_code]",
+      "intent": "News"
+    }
+  ],
   "utterances": [
+    {
+      "text": "abort",
+      "intent": "Cancel",
+      "entities": []
+    },
     {
       "text": "any business news for cba",
       "intent": "News",
       "entities": [
         {
-          "entity": "company_item",
+          "entity": "news_type",
+          "startPos": 4,
+          "endPos": 11
+        },
+        {
+          "entity": "topic",
           "startPos": 13,
           "endPos": 16
         },
@@ -65,7 +117,7 @@
           "endPos": 10
         },
         {
-          "entity": "company_item",
+          "entity": "topic",
           "startPos": 12,
           "endPos": 15
         },
@@ -77,11 +129,43 @@
       ]
     },
     {
+      "text": "any new on agr",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 4,
+          "endPos": 6
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 11,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "any new on cba",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 4,
+          "endPos": 6
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 11,
+          "endPos": 13
+        }
+      ]
+    },
+    {
       "text": "any news for cba",
       "intent": "News",
       "entities": [
         {
-          "entity": "company_item",
+          "entity": "topic",
           "startPos": 4,
           "endPos": 7
         },
@@ -97,7 +181,7 @@
       "intent": "News",
       "entities": [
         {
-          "entity": "company_item",
+          "entity": "topic",
           "startPos": 4,
           "endPos": 7
         },
@@ -105,6 +189,166 @@
           "entity": "company",
           "startPos": 13,
           "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "any news for rsg",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 4,
+          "endPos": 7
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 13,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "any news on agr",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 4,
+          "endPos": 7
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 12,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "any news on ao2",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 4,
+          "endPos": 7
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 12,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "any news on cba",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 4,
+          "endPos": 7
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 12,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "any news on cba?",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 4,
+          "endPos": 7
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 12,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "any news on qbe",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 4,
+          "endPos": 7
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 12,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "any news on rsg",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 4,
+          "endPos": 7
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 12,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "any news on rsg'",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 4,
+          "endPos": 7
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 12,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "any videos for commonwealth bank",
+      "intent": "Videos",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 4,
+          "endPos": 9
+        },
+        {
+          "entity": "company",
+          "startPos": 15,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "any videos on cba",
+      "intent": "Videos",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 4,
+          "endPos": 9
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 14,
+          "endPos": 16
         }
       ]
     },
@@ -118,7 +362,7 @@
           "endPos": 18
         },
         {
-          "entity": "company_item",
+          "entity": "topic",
           "startPos": 20,
           "endPos": 23
         },
@@ -139,7 +383,7 @@
           "endPos": 17
         },
         {
-          "entity": "company_item",
+          "entity": "topic",
           "startPos": 19,
           "endPos": 22
         },
@@ -147,6 +391,22 @@
           "entity": "stock_code",
           "startPos": 28,
           "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "can i have finance videos on cba",
+      "intent": "Videos",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 11,
+          "endPos": 17
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 29,
+          "endPos": 31
         }
       ]
     },
@@ -160,7 +420,7 @@
           "endPos": 19
         },
         {
-          "entity": "company_item",
+          "entity": "topic",
           "startPos": 21,
           "endPos": 24
         },
@@ -181,7 +441,7 @@
           "endPos": 24
         },
         {
-          "entity": "company_item",
+          "entity": "topic",
           "startPos": 26,
           "endPos": 29
         },
@@ -193,6 +453,141 @@
       ]
     },
     {
+      "text": "cancel",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "disregard",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "do not do it",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "do not do that",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "don't",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "don't do it",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "don't do that",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "good afternoon",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "good evening",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "good morning",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "good night",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hello bot",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "help",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help me",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help me please",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help please",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hi bot",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hiya",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how are you",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how are you doing today?",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how are you doing?",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how are you today?",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "i am stuck",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "i would like to cancel",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "i'm stuck",
+      "intent": "Help",
+      "entities": []
+    },
+    {
       "text": "is there any finance news for cba",
       "intent": "News",
       "entities": [
@@ -202,7 +597,7 @@
           "endPos": 19
         },
         {
-          "entity": "company_item",
+          "entity": "topic",
           "startPos": 21,
           "endPos": 24
         },
@@ -212,6 +607,108 @@
           "endPos": 32
         }
       ]
+    },
+    {
+      "text": "is there any finance videos on commonwealth bank",
+      "intent": "Videos",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 13,
+          "endPos": 19
+        },
+        {
+          "entity": "company",
+          "startPos": 31,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "is there finance news on rsg",
+      "intent": "News",
+      "entities": [
+        {
+          "entity": "topic",
+          "startPos": 17,
+          "endPos": 20
+        },
+        {
+          "entity": "stock_code",
+          "startPos": 25,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "my water bottle is green.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "never mind",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "please cancel",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "please disregard",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "please help me",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "please stop",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "stop",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "there is a large deep dish pizza in your future.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what can i say",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what can you do",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what can you help me with",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what do i do now?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what do i do?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "why doesn't this work ?",
+      "intent": "Help",
+      "entities": []
     }
   ],
   "settings": []

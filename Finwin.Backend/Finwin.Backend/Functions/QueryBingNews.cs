@@ -37,6 +37,17 @@ namespace Finwin.Backend.Functions
                     using (var newsApi = new BingNewsService())
                     {
                         var news = await newsApi.Query(query);
+
+                        using (var cosmosService = new CosmosDataService("news", "stock"))
+                        {
+                            foreach (var value in news.value)
+                            {
+                                value.StockCode = query;
+
+                                await cosmosService.InsertItemAsync(value);
+                            }
+                        }
+
                         return new OkObjectResult(news);
                     }
                 }

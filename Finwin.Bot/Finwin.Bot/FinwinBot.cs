@@ -5,22 +5,21 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+
+using Finwin.Bot.Dialogs;
+using Finwin.Common.Contracts;
 
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
+using Microsoft.WindowsAzure.Storage.Blob;
 
 using Newtonsoft.Json;
-
-using Finwin.Bot;
-using Finwin.Bot.Dialogs;
 using Newtonsoft.Json.Linq;
-using System.Net.Http;
-using Microsoft.WindowsAzure.Storage.Blob;
-using Finwin.Bot.Contracts;
 
 namespace Finwin.Bot
 {
@@ -201,20 +200,20 @@ namespace Finwin.Bot
                 var company = GetEntity<string>(luisResult, "company");
                 var stock_code = GetEntity<string>(luisResult, "stock_code");
                 var news_type = GetEntity<string>(luisResult, "news_type");
-                var company_item = GetEntity<string>(luisResult, "company_item");
+                var company_item = GetEntity<string>(luisResult, "topic");
 
                 using (var client = new HttpClient())
                 {
-                    var url = string.Format("http://finwin.azurewebsites.net/api/QueryBingNews");
+                    var url = string.Format("https://finwin.azurewebsites.net/api/QueryBingNews");
                     var query = new { Query = stock_code };
                     var content = new StringContent(JsonConvert.SerializeObject(query));
                     var response = await client.PostAsync(url, content);
                     var jsonResponse = await response.Content.ReadAsStringAsync();
 
-                    var news = JsonConvert.DeserializeObject<News>(jsonResponse);
-                    var response = news == null ? "News State Error" : "News Updating";
+                    var news = JsonConvert.DeserializeObject<BingNewsContract>(jsonResponse);
+                    var result = news == null ? "News State Error" : "News Updating";
 
-                    string message = $"response={response}";
+                    string message = $"{result}";
 
                     await turnContext.SendActivityAsync(message);
                 }

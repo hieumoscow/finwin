@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 using Finwin.Backend.Functions;
-using Finwin.Backend.Contracts;
+using Finwin.Common.Contracts;
 
 namespace Finwin.Backend.Services
 {

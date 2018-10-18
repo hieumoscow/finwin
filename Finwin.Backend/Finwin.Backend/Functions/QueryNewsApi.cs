@@ -18,7 +18,6 @@ using Microsoft.ApplicationInsights.DataContracts;
 using Newtonsoft.Json;
 
 using Finwin.Backend.Services;
-using Finwin.Backend.Contracts;
 
 namespace Finwin.Backend.Functions
 {

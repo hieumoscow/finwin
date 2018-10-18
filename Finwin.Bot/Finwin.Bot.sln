@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finwin.Bot", "Finwin.Bot\Finwin.Bot.csproj", "{428B8628-0AD3-4180-87F9-275F62557D0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finwin.Common", "Finwin.Common\Finwin.Common.csproj", "{9BCBD24D-F23E-4C85-AF2C-26267457DA46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finwin.Common", "..\Finwin.Common\Finwin.Common.csproj", "{C92E309E-2C29-43DE-A494-7A14E42EF9C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{428B8628-0AD3-4180-87F9-275F62557D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{428B8628-0AD3-4180-87F9-275F62557D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{428B8628-0AD3-4180-87F9-275F62557D0A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9BCBD24D-F23E-4C85-AF2C-26267457DA46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9BCBD24D-F23E-4C85-AF2C-26267457DA46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9BCBD24D-F23E-4C85-AF2C-26267457DA46}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9BCBD24D-F23E-4C85-AF2C-26267457DA46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C92E309E-2C29-43DE-A494-7A14E42EF9C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C92E309E-2C29-43DE-A494-7A14E42EF9C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C92E309E-2C29-43DE-A494-7A14E42EF9C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C92E309E-2C29-43DE-A494-7A14E42EF9C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
